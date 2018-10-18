@@ -1,0 +1,59 @@
+{
+  "name": "apollon-mobile-components",
+  "version": "0.0.1",
+  "description": "React components for apollon-mobile-frontend",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@storybook/addon-info": "^4.0.0-alpha.25",
+    "@storybook/react": "^4.0.0-alpha.25",
+    "@types/jest": "^23.3.5",
+    "@types/react": "^16.4.18",
+    "@types/storybook__react": "^3.0.9",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.4",
+    "jest": "^23.6.0",
+    "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-scripts-ts": "^3.1.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.3"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "npm run lint && npm run build-lib && build-storybook",
+    "build-lib-watch": "tsc -w",
+    "build-lib": "tsc && npm run copy-css-to-lib && npm run copy-svg-to-lib && npm run copy-png-to-lib && npm run copy-woff2-to-lib",
+    "test": "react-scripts-ts test --env=jsdom",
+    "test:coverage": "npm test -- --coverage",
+    "eject": "react-scripts-ts eject",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib",
+    "copy-woff2-to-lib": "cpx \"./src/**/*.woff2\" ./build/lib",
+    "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
+    "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhike-team/apollon-mobile-components.git"
+  },
+  "keywords": [
+    "component",
+    "library",
+    "react",
+    "typescript",
+    "zhike",
+    "apollon"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/zhike-team/apollon-mobile-components/issues"
+  },
+  "homepage": "https://github.com/zhike-team/apollon-mobile-components#readme"
+}
