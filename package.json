@@ -2,7 +2,8 @@
   "name": "apollon-mobile-components",
   "version": "0.0.1",
   "description": "React components for apollon-mobile-frontend",
-  "main": "index.js",
+  "main": "./build/lib/index.js",
+  "types" : "./build/lib/index.d.ts",
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
