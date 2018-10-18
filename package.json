@@ -1,5 +1,5 @@
 {
-  "name": "apollon-mobile-components",
+  "name": "@zhike/apollon-mobile-components",
   "version": "0.0.1",
   "description": "React components for apollon-mobile-frontend",
   "main": "./build/lib/index.js",
