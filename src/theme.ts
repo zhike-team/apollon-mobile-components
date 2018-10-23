@@ -1,4 +1,5 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+// tslint:disable-next-line
+import { createMuiTheme, Theme } from '@material-ui/core/styles'
 import orange from '@material-ui/core/colors/orange'
 
 export default createMuiTheme({
