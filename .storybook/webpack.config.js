@@ -12,7 +12,6 @@ module.exports = (baseConfig, env, config) => {
   },
   { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']})
   config.plugins.push(new TSDocgenPlugin(), new CopyWebpackPlugin([
-    { from: 'src/images', to: 'images' }
   ])) // optional
   config.resolve.extensions.push(".ts", ".tsx")
   return config
