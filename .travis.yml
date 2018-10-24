@@ -11,3 +11,5 @@ deploy:
     tags: true
     branch: master
   tag: latest
+after_success:
+  - npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
