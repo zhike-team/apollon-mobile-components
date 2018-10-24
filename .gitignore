@@ -71,3 +71,6 @@ src/**/*.css
 
 # .DS_Store
 .DS_Store
+
+# .cache
+.cache

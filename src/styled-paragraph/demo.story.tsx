@@ -8,8 +8,8 @@ storiesOf('Styled Paragraph', module)
   .add('Styled Paragraph', () => (
     <MuiThemeProvider theme={theme}>
       <Paragraph
-        title="this is title"
-        text="this is paragraph，当一个人，当一颗心沉入海底"
+        title='this is title'
+        text='this is paragraph，当一个人，当一颗心沉入海底'
       />
     </MuiThemeProvider>
   ))

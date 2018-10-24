@@ -51,14 +51,15 @@ export interface StyledParagraphPropInterface {
 const StyledParagraph = (props: StyledParagraphPropInterface) => {
   const { classes = {}, text = '', title = '', icon } = props
   const hasIcon = !!icon
+
+  const iconDom = (
+    <div className={classes.iconSlot}>
+      <img {...icon} className={classes.icon} />
+    </div>
+  )
   return (
     <div className={classes.root} >
-      {
-        hasIcon &&
-        <div className={classes.iconSlot}>
-          <img {...icon} className={classes.icon} />
-        </div>
-      }
+      {hasIcon && iconDom}
       <div className={classes.right}>
         <h1 className={classes.title}>{title}</h1>
         <p className={classes.paragraph}>{text}</p>
