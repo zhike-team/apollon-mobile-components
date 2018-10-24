@@ -53,7 +53,7 @@
     "copy-svg-to-lib": "cpx \"./src/**/*.svg\" ./build/lib",
     "copy-png-to-lib": "cpx \"./src/**/*.png\" ./build/lib",
     "precommit": "npm run lint",
-    "lint": "tslint --force -c tslint.json -p ."
+    "lint": "tslint -c tslint.json -p ."
   },
   "repository": {
     "type": "git",
