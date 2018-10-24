@@ -13,12 +13,12 @@ interface IconPropsType {
   color?: string
 }
 
-interface IconProps extends IconPropsType, SvgProps {
+interface IconPropsInterface extends IconPropsType, SvgProps {
   size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg'
   onClick?: React.MouseEventHandler<SVGSVGElement>
 }
 
-class Icon extends React.Component<IconProps, any> {
+class Icon extends React.Component<IconPropsInterface, any> {
   static defaultProps = {
     size: 'md'
   }
