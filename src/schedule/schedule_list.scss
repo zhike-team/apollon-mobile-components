@@ -18,4 +18,24 @@
         text-align: right;
       }
     }
+    footer {
+      .view-button {
+        width: 100%;
+      }
+      div {
+        display: flex;
+        p {
+          flex: 1;
+          button {
+            width: 100%;
+          }
+        }
+      }
+      .finished-button {
+        padding-left: 10px;
+      }
+      .unfinish-button {
+        padding-right: 10px;
+      }
+    }
 }
