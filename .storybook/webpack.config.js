@@ -1,5 +1,6 @@
 const path = require("path")
 const TSDocgenPlugin = require("react-docgen-typescript-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = (baseConfig, env, config) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
@@ -10,7 +11,9 @@ module.exports = (baseConfig, env, config) => {
     },
   },
   { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']})
-  config.plugins.push(new TSDocgenPlugin()) // optional
+  config.plugins.push(new TSDocgenPlugin(), new CopyWebpackPlugin([
+    { from: 'src/images', to: 'images' }
+  ])) // optional
   config.resolve.extensions.push(".ts", ".tsx")
   return config
 }
