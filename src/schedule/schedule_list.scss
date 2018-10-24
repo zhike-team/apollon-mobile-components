@@ -1,0 +1,21 @@
+.schedule-list {
+    padding: 0 16px;
+    header {
+      display: flex;
+      span {
+        flex: 1;
+      }
+      .status {
+        text-align: right;
+      }
+    }
+    main {
+      display: flex;
+      >div {
+        flex: 1;
+      }
+      .member {
+        text-align: right;
+      }
+    }
+}

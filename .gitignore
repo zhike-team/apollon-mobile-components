@@ -65,3 +65,6 @@ build
 
 # storybook
 storybook-static
+
+# compiled css files
+src/**/*.css
