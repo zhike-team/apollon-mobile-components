@@ -15,6 +15,22 @@ interface ScheduleListStateInterface {}
 export default class ScheduleList extends React.Component<ScheduleListPropsInterface, ScheduleListStateInterface> {
   public render () {
     const { data, status } = this.props
+
+    const completeButtonsDom = (<Button variant='outlined' size='large' color='primary' className='view-button'> 查看反馈 </Button>)
+    const uncompleteButtonsDom = (
+      <div>
+        <p className='unfinish-button'>
+          <Button variant='outlined' size='large' color='primary'>
+            未完成
+          </Button>
+        </p>
+        <p className='finished-button'>
+          <Button variant='contained' size='large' color='primary'>
+            完成
+          </Button>
+        </p>
+      </div>
+    )
     return (
       <div className='schedule-list'>
         <header>
@@ -32,24 +48,7 @@ export default class ScheduleList extends React.Component<ScheduleListPropsInter
           </div>
         </main>
         <footer>
-          {
-            status === 3 ?
-              <Button variant='outlined' size='large' color='primary' className='view-button'>
-                查看反馈
-              </Button>
-              : <div>
-                <p className='unfinish-button'>
-                  <Button variant='outlined' size='large' color='primary'>
-                    未完成
-                  </Button>
-                </p>
-                <p className='finished-button'>
-                  <Button variant='contained' size='large' color='primary'>
-                    完成
-                  </Button>
-                </p>
-              </div>
-          }
+          {status === 3 ? completeButtonsDom : uncompleteButtonsDom}
         </footer>
       </div>
     )
