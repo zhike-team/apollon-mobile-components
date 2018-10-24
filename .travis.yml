@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "6"
+  - "8"
+script: npm run lint && npm test
+deploy:
+  provider: npm
+  email: banyudu@gmail.com
+  api_key:
+    secure: dZjjU2+/6fpgriRQCn5ohh/J8DkRWur2cDhKaqrBRUE1m9Js6mKSD+1z0dTDQHVHueivXJGF3YAa+ElWnjmlUze4eXHJLndRRX5/lblIB7fS7I84DXyvQHVBb1QdVs7/ZRXkP7sA+Yby+RSVy3MidbKFQ9ocbhWbst1hMMlCoVKvXv82W6nBm3EsbjTHUONlnUy3MVnHs8uKPUs7cM+mvQGcgXPagEDQDMPNTwnafj0XbnJv7JWGitCqmC58v+MzImBlKo64O3zIqdzZTcbuVUcIJWmLkl0oHE+IBOMoX0295ExocSIWiY70PAIerwATIZ0AEVDzTZDYGcEPhN8kCx0W0lNxtpDJbFpwnU13PiRZhjc3q56T/6rcSf0vX+u8U90gnSZOg9LxUmgg123XcXCokE+xF+7uHQzkdJOIBR1UFUxOxsvUVaLebA+nyztOamwFnqJcj41gEj6RWUqVEUMF0nb1LVk0y6CgObpMjxWbNEZylg03EGXQnyfi16SPkY9u4ZozFczAsZRgGH0AmwiULoCN0JrbepibEyh6c4GoLADhlO/g8I6e+MNduJT6E5rVmidTUCY7uPvpfSvLq4Od/ygJ1eI7tpzbC2F7QaV3T86M/obyB6SrkLkKtozUUHXwFPMvbBwSg//Qm65805Kzp0f1oNZyzaBq4oIeUw8=
+  on:
+    tags: true
+    branch: master
+  tag: latest
