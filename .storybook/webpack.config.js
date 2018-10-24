@@ -14,6 +14,8 @@ module.exports = (baseConfig, env, config) => {
   // config.plugins.push(new TSDocgenPlugin(), new CopyWebpackPlugin([
   //   { from: 'src/images', to: 'images' }
   // ])) // optional
+  config.plugins.push(new TSDocgenPlugin(), new CopyWebpackPlugin([
+  ])) // optional
   config.resolve.extensions.push(".ts", ".tsx")
   return config
 }
