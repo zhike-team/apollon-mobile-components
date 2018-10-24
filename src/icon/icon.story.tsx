@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react'
 import Icon from './index'
 
 storiesOf('Icon', module)
-  .add('right arrow icon', () => (
+  .add('calendar icon', () => (
     <Icon type='calendar' size='xxs' />
   ))

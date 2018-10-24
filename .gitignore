@@ -68,3 +68,6 @@ storybook-static
 
 # compiled css files
 src/**/*.css
+
+# .DS_Store
+.DS_Store
