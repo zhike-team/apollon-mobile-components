@@ -13,7 +13,6 @@ const images: string[] = ['building', 'desk', 'hallway', 'homework', 'playground
 class ImageButton extends React.Component<ImageButtonPropsInterface, any> {
   render () {
     const { text, index, onClick, isCurrentSite } = this.props
-    console.log('fafafa', `url(~images/image-buttons/${images[index % images.length]}.png)`)
     return (
       <div
         className='image-button-container'
