@@ -7,16 +7,16 @@ import theme from '../theme'
 storiesOf('Checkbox', module)
   .add('checked', () => (
     <MuiThemeProvider theme={theme}>
-      <Checkbox checked={true} classes={{ checked: 'funny-checkbox' }} />
+      <Checkbox checked={true} />
     </MuiThemeProvider>
   ))
   .add('not checked', () => (
     <MuiThemeProvider theme={theme}>
-      <Checkbox checked={false} classes={{ root: 'funny-checkbox' }} />
+      <Checkbox checked={false} />
     </MuiThemeProvider>
   ))
   .add('uncontrolled', () => (
     <MuiThemeProvider theme={theme}>
-      <Checkbox classes={{ checked: 'funny-checkbox' }} />
+      <Checkbox />
     </MuiThemeProvider>
   ))

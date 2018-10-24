@@ -3,6 +3,8 @@
   "rules": {
     "no-unused-variable": {
       "severity": "warning"
-    }
+    },
+    "quotemark": [true, "single", "jsx-double"],
+    "jsx-no-multiline-js": [false]
   }
 }
