@@ -5,7 +5,6 @@ import ReportListItem from './report-list-item/report-list-item'
 
 export {
   theme,
-  Button,
   Checkbox,
   StyledParagraph,
   ReportListItem
