@@ -50,7 +50,6 @@ export default class ScheduleList extends React.Component<ScheduleListPropsInter
                 </p>
               </div>
           }
-          
         </footer>
       </div>
     )
