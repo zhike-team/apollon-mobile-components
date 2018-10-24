@@ -1,0 +1,41 @@
+.schedule-list {
+    padding: 0 16px;
+    header {
+      display: flex;
+      span {
+        flex: 1;
+      }
+      .status {
+        text-align: right;
+      }
+    }
+    main {
+      display: flex;
+      >div {
+        flex: 1;
+      }
+      .member {
+        text-align: right;
+      }
+    }
+    footer {
+      .view-button {
+        width: 100%;
+      }
+      div {
+        display: flex;
+        p {
+          flex: 1;
+          button {
+            width: 100%;
+          }
+        }
+      }
+      .finished-button {
+        padding-left: 10px;
+      }
+      .unfinish-button {
+        padding-right: 10px;
+      }
+    }
+}
