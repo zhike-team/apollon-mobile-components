@@ -28,7 +28,7 @@ class Icon extends React.Component<IconPropsInterface, any> {
   }
   render () {
     const { type, className, size, ...restProps } = this.props
-    const cls = `${className || ''} sm-icon sm-icon-${type} sm-icon-${size}`
+    const cls = `${className || ''} sm-icon sm-icon-${size}`
     return (
       <svg className={cls} {...restProps}>
         <use xlinkHref={`#${type}`} />
