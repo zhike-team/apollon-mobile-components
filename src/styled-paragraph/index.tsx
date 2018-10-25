@@ -2,6 +2,7 @@ import * as React from 'react'
 import classNames from 'classnames'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import './styles.scss'
 
 // 扩展
@@ -22,11 +23,20 @@ const styles = (theme: Theme) => createStyles({
   root: {
     display: 'inline-flex'
   },
-  title: {},
-  paragraph: {},
-  icon: {},
+  title: {
+    fontSize: '1rem'
+  },
+  paragraph: {
+    // 14 / 16px
+    fontSize: '0.875rem',
+    marginBottom: '2rem'
+  },
+  icon: {
+    width: '1.25rem'
+  },
   iconSlot: {
-    height: '100%'
+    height: '100%',
+    marginRight: '0.5rem'
   },
   right: {
     display: 'flex',
@@ -45,23 +55,25 @@ export interface StyledParagraphPropInterface {
   },
   text?: string,
   title?: string,
-  icon?: React.ImgHTMLAttributes<any>
+  iconProps?: React.ImgHTMLAttributes<any>
 }
 
 const StyledParagraph = (props: StyledParagraphPropInterface) => {
-  const { classes = {}, text = '', title = '', icon } = props
-  const hasIcon = !!icon
-  const iconDom = (
+  const { classes = {}, text = '', title = '', iconProps } = props
+  const hasIcon = !!iconProps
+  const iconDom = hasIcon && (
     <div className={classes.iconSlot}>
-      <img {...icon} className={classes.icon} />
+      <img {...iconProps} className={classes.icon} />
     </div>
   )
   return (
     <div className={classes.root} >
       {hasIcon && iconDom}
       <div className={classes.right}>
-        <h1 className={classes.title}>{title}</h1>
-        <p className={classes.paragraph}>{text}</p>
+        <Typography color={'secondary'} classes={{ root: classes.title }}>{title}</Typography>
+        <p>
+          <Typography color={'primary'} classes={{ root: classes.paragraph }}>{text}</Typography>
+        </p>
       </div>
     </div>
   )
