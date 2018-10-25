@@ -9,8 +9,8 @@ const data = {
 
 storiesOf('ScheduleList', module)
   .add('ScheduleList component finished', () => (
-    <ScheduleList data={data} status={3}/>
+    <ScheduleList data={data} complete={true}/>
   ))
   .add('ScheduleList component unfinish', () => (
-    <ScheduleList status={1} data={data}/>
+    <ScheduleList complete={false} data={data}/>
   ))

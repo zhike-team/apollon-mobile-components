@@ -8,18 +8,41 @@ interface ScheduleListPropsInterface {
     studentName: string,
     teacherName: string
   },
-  status: number,
+  complete: boolean,
 }
 interface ScheduleListStateInterface {}
 
 export default class ScheduleList extends React.Component<ScheduleListPropsInterface, ScheduleListStateInterface> {
+  completeRender = () => {
+    return(
+      <Button variant='outlined' size='large' color='primary' className='view-button'>
+        查看反馈
+      </Button>
+    )
+  }
+  unCompleteRender = () => {
+    return (
+      <div>
+        <p className='unfinish-button'>
+          <Button variant='outlined' size='large' color='primary'>
+            未完成
+          </Button>
+        </p>
+        <p className='finished-button'>
+          <Button variant='contained' size='large' color='primary'>
+            完成
+          </Button>
+        </p>
+      </div>
+    )
+  }
   public render () {
-    const { data, status } = this.props
+    const { data, complete } = this.props
     return (
       <div className='schedule-list'>
         <header>
           <span className='time'>时间</span>
-          <span className='status'>图标{status === 3 ? '已完成' : '未完成'}</span>
+          <span className='status'>图标{complete ? '已完成' : '未完成'}</span>
         </header>
         <main>
           <div className='name'>
@@ -32,24 +55,7 @@ export default class ScheduleList extends React.Component<ScheduleListPropsInter
           </div>
         </main>
         <footer>
-          {
-            status === 3 ?
-              <Button variant='outlined' size='large' color='primary' className='view-button'>
-                查看反馈
-              </Button>
-              : <div>
-                <p className='unfinish-button'>
-                  <Button variant='outlined' size='large' color='primary'>
-                    未完成
-                  </Button>
-                </p>
-                <p className='finished-button'>
-                  <Button variant='contained' size='large' color='primary'>
-                    完成
-                  </Button>
-                </p>
-              </div>
-          }
+          {complete ? this.completeRender() : this.unCompleteRender()}
         </footer>
       </div>
     )
