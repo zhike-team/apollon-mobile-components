@@ -7,8 +7,7 @@ storiesOf('ImageButton', module)
   .add('image button', () => (
     <ImageButton
       mainText='北京新中关学习中心'
-      note={true}
-      noteText='关中大侠'
+      note='关中大侠'
       backgroundImage={testImg}
     />
   ))

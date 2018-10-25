@@ -5,26 +5,17 @@ export interface ImageButtonPropsInterface {
   mainText: string,
   backgroundImage: string,
   onClick?: React.MouseEventHandler<HTMLElement>,
-  note?: boolean,
-  noteText?: string
+  note?: string
 }
 
 class ImageButton extends React.Component<ImageButtonPropsInterface, any> {
-
-  renderNote = () => {
-    const { note, noteText } = this.props
-    return note && noteText ? (
-      <span className='note'>
-        {noteText}
-      </span>
-      ) : null
-  }
 
   render () {
     const {
       mainText,
       onClick,
-      backgroundImage
+      backgroundImage,
+      note
     } = this.props
     return (
       <div
@@ -33,7 +24,7 @@ class ImageButton extends React.Component<ImageButtonPropsInterface, any> {
         onClick={onClick}
       >
         <p>{mainText}</p>
-        {this.renderNote()}
+        {note && <span className='note'>{note}</span>}
       </div>
     )
   }
