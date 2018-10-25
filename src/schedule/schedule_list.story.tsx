@@ -5,8 +5,8 @@ const data = {
   name: 'IELTS口语',
   studentName: 'LF1',
   teacherName: 'LF2',
-  startTime: '9:30',
-  endTime: '10:30',
+  startTime: new Date(),
+  endTime: new Date(),
   classroom: '北京新中关学习中心'
 }
 

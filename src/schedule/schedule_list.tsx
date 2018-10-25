@@ -7,8 +7,8 @@ interface SchedulePropsInterface {
     name: string,
     studentName: string,
     teacherName: string,
-    startTime: string,
-    endTime: string,
+    startTime: Date,
+    endTime: Date,
     classroom: string
   },
   complete: boolean | null,
@@ -22,6 +22,10 @@ interface ScheduleStateInterface {}
 export default class Schedule extends React.Component<SchedulePropsInterface, ScheduleStateInterface> {
   public render () {
     const { data, complete, identify } = this.props
+    enum identifyType {
+      teacher = 'teacher',
+      student = 'student'
+    }
     const completeButtonsDom = (<Button variant='outlined' size='large' color='primary' className='view-button' onClick={this.props.viewReport}> 查看反馈 </Button>)
     const uncompleteButtonsDom = (
       <div>
@@ -54,7 +58,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
           </div>
         </main>
         <footer>
-          {complete ? completeButtonsDom : identify === 'teacher' ? uncompleteButtonsDom : ''}
+          {complete ? completeButtonsDom : identify === identifyType.teacher ? uncompleteButtonsDom : ''}
         </footer>
       </div>
     )
