@@ -1,4 +1,5 @@
 import * as React from 'react'
+import './icon.scss'
 import loadSprite from './loadSprite'
 
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
@@ -27,7 +28,7 @@ class Icon extends React.Component<IconPropsInterface, any> {
   }
   render () {
     const { type, className, size, ...restProps } = this.props
-    const cls = `${className} sm-icon sm-icon-${type} sm-icon-${size}`
+    const cls = `${className || ''} sm-icon sm-icon-${size}`
     return (
       <svg className={cls} {...restProps}>
         <use xlinkHref={`#${type}`} />
