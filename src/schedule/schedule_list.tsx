@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './schedule_list.scss'
+import './schedule_list.css'
 import Button from '@material-ui/core/Button'
 
 interface SchedulePropsInterface {

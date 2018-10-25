@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './image-button.scss'
+import './image-button.css'
 
 export interface ImageButtonPropsInterface {
   mainText: string,
