@@ -24,19 +24,18 @@ const styles = (theme: Theme) => createStyles({
     display: 'inline-flex'
   },
   title: {
-    fontSize: '1rem'
+    fontSize: 16
   },
   paragraph: {
-    // 14 / 16px
-    fontSize: '0.875rem',
-    marginBottom: '2rem'
+    fontSize: 14,
+    marginBottom: 32
   },
   icon: {
-    width: '1.25rem'
+    width: 20
   },
   iconSlot: {
     height: '100%',
-    marginRight: '0.5rem'
+    marginRight: 8
   },
   right: {
     display: 'flex',
