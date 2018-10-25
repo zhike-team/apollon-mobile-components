@@ -2,21 +2,38 @@ import * as React from 'react'
 import './image-button.scss'
 
 export interface ImageButtonPropsInterface {
-  text: string,
+  mainText: string,
+  backgroundImage: string,
   onClick?: React.MouseEventHandler<HTMLElement>,
-  isCurrentSite: boolean
+  note?: boolean,
+  noteText?: string
 }
 
 class ImageButton extends React.Component<ImageButtonPropsInterface, any> {
+
+  renderNote = () => {
+    const { note, noteText } = this.props
+    return note && noteText ? (
+      <span className='note'>
+        {noteText}
+      </span>
+      ) : null
+  }
+
   render () {
-    const { text, onClick, isCurrentSite } = this.props
+    const {
+      mainText,
+      onClick,
+      backgroundImage
+    } = this.props
     return (
       <div
         className='image-button-container'
+        style={{ backgroundImage }}
         onClick={onClick}
       >
-        <p>{text}</p>
-        {isCurrentSite && <span className='note'>当前站点</span>}
+        <p>{mainText}</p>
+        {this.renderNote()}
       </div>
     )
   }
