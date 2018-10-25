@@ -9,15 +9,15 @@ storiesOf('报告列表项', module)
   .add('日报项', () => (
     <ReportListItem
       icon='日报'
-      titleOne='2018年10月18日教学服务日报'
-      handleReportDetail={showDailyReport}
+      primaryText='2018年10月18日教学服务日报'
+      onReportClick={showDailyReport}
     />
   ))
   .add('周报项', () => (
     <ReportListItem
       icon='周报'
-      titleOne='2018.10.01-2018.10.07'
-      titleTwo='教学服务周报'
-      handleReportDetail={showWeeklyReport}
+      primaryText='2018.10.01-2018.10.07'
+      secondaryText='教学服务周报'
+      onReportClick={showWeeklyReport}
     />
   ))
