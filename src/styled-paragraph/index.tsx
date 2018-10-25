@@ -2,6 +2,7 @@ import * as React from 'react'
 import classNames from 'classnames'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import './styles.scss'
 
 // 扩展
@@ -22,11 +23,20 @@ const styles = (theme: Theme) => createStyles({
   root: {
     display: 'inline-flex'
   },
-  title: {},
-  paragraph: {},
-  icon: {},
+  title: {
+    fontSize: '1rem'
+  },
+  paragraph: {
+    // 14 / 16px
+    fontSize: '0.875rem',
+    marginBottom: '2rem'
+  },
+  icon: {
+    width: '1.25rem'
+  },
   iconSlot: {
-    height: '100%'
+    height: '100%',
+    marginRight: '0.5rem'
   },
   right: {
     display: 'flex',
@@ -60,8 +70,10 @@ const StyledParagraph = (props: StyledParagraphPropInterface) => {
     <div className={classes.root} >
       {hasIcon && iconDom}
       <div className={classes.right}>
-        <h1 className={classes.title}>{title}</h1>
-        <p className={classes.paragraph}>{text}</p>
+        <Typography color={'secondary'} classes={{ root: classes.title }}>{title}</Typography>
+        <p>
+          <Typography color={'primary'} classes={{ root: classes.paragraph }}>{text}</Typography>
+        </p>
       </div>
     </div>
   )
