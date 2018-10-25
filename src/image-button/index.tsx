@@ -29,7 +29,7 @@ class ImageButton extends React.Component<ImageButtonPropsInterface, any> {
     return (
       <div
         className='image-button-container'
-        style={{ backgroundImage }}
+        style={{ backgroundImage: 'url(' + backgroundImage + ')' }}
         onClick={onClick}
       >
         <p>{mainText}</p>
