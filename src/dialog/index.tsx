@@ -132,6 +132,8 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
   }
 }
 
+// resolve value: -1(selected nothing), 0\1\2...(index of selected button)
+// reject value(rarely happen): -2(not prepared), -3(internal queueing bug ;])
 export const openDialog: IOpenDialog = async (params: IOpenDialogParams) => {
   if (!params.actions) {
     params.actions = [{ text: '取消' }, { text: '确定' }]
