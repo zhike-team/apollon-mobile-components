@@ -73,5 +73,8 @@
   "bugs": {
     "url": "https://github.com/zhike-team/apollon-mobile-components/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "homepage": "https://github.com/zhike-team/apollon-mobile-components#readme"
 }
