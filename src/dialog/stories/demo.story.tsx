@@ -14,7 +14,6 @@ async function handleClick () {
       message: `message: message: message: message: message: message: ${counter - 1}`
     }),
     openDialog({
-      title: `title: ${counter}`,
       message: `message: ${counter}`
     })
   ])
@@ -24,7 +23,7 @@ async function handleClick () {
 storiesOf('Confirm Dialog', module)
   .add('click open', () => (
     <MuiThemeProvider theme={theme}>
-      <Button id={'123'} onClick={handleClick} >打开</Button>
+      <Button onClick={handleClick} >打开</Button>
       <ConfirmDialog fullScreen={false} />
     </MuiThemeProvider>
   ))

@@ -9,48 +9,37 @@ import DialogTitle, { DialogTitleProps } from '@material-ui/core/DialogTitle'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
 
-declare module '@material-ui/core/styles/createMuiTheme' {
-  interface Theme {
-    status: {
-      danger: string
-    }
-  }
-  interface ThemeOptions {
-    status: {
-      danger: string
-    }
-  }
-}
-
-const styles = (theme: Theme) => createStyles({
+const buttonStyles = (theme: Theme) => createStyles({
   root: {
     display: 'inline-flex'
   },
-  title: {
-    fontSize: 16
-  },
-  paragraph: {
-    fontSize: 14,
-    marginBottom: 32
-  },
-  icon: {
-    width: 20
-  },
-  iconSlot: {
-    height: '100%',
-    marginRight: 8
-  },
-  right: {
-    display: 'flex',
-    flexDirection: 'column'
+  textPrimary: {
+    color: theme.custom.gray
+  }
+})
+
+const dialogStyles = (theme: Theme) => createStyles({
+})
+
+const dialogActionStyles = (theme: Theme) => createStyles({
+})
+
+const dialogContentStyles = (theme: Theme) => createStyles({
+})
+
+const dialogContentTextStyles = (theme: Theme) => createStyles({
+  root: {
+    color: theme.custom.gray2,
+    fontSize: 16,
+    borderRadius: 10
   }
 })
 
 export default {
-  Button: withStyles(styles)(Button),
-  Dialog: withStyles(styles)(Dialog),
-  DialogTitle: withStyles(styles)(DialogTitle),
-  DialogActions: withStyles(styles)(DialogActions),
-  DialogContent: withStyles(styles)(DialogContent),
-  DialogContentText: withStyles(styles)(DialogContentText)
+  Button: withStyles(buttonStyles)(Button),
+  Dialog: withStyles(dialogStyles)(Dialog),
+  DialogTitle: withStyles(dialogActionStyles)(DialogTitle),
+  DialogActions: withStyles(dialogActionStyles)(DialogActions),
+  DialogContent: withStyles(dialogContentStyles)(DialogContent),
+  DialogContentText: withStyles(dialogContentTextStyles)(DialogContentText)
 }

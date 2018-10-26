@@ -2,6 +2,12 @@ import * as React from 'react'
 import StyledComponents from './with-style'
 import withMobileDialog from '@material-ui/core/withMobileDialog'
 import { WithWidth } from '@material-ui/core/withWidth'
+import { ButtonProps } from '@material-ui/core/Button'
+import { DialogProps } from '@material-ui/core/Dialog'
+import { DialogActionsProps } from '@material-ui/core/DialogActions'
+import { DialogContentProps } from '@material-ui/core/DialogContent'
+import { DialogContentTextProps } from '@material-ui/core/DialogContentText'
+import { DialogTitleProps } from '@material-ui/core/DialogTitle'
 
 const { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } = StyledComponents
 
@@ -16,7 +22,7 @@ export interface IOpenDialogAction {
 }
 
 export interface IOpenDialogParams {
-  title: string,
+  title?: string,
   message: string,
   actions?: IOpenDialogAction[]
 }
@@ -28,7 +34,13 @@ export interface IOpenDialog {
 }
 
 export interface SSDialogPropInterface extends React.ClassAttributes<any> {
-  fullScreen: boolean
+  fullScreen: boolean,
+  buttonProps?: ButtonProps,
+  dialogProps?: DialogProps,
+  dialogActionsProps?: DialogActionsProps,
+  dialogTitleProps?: DialogTitleProps,
+  dialogContentProps?: DialogContentProps,
+  dialogContentTextProps?: DialogContentTextProps
 }
 
 export interface SSDialogStateInterface extends React.ClassAttributes<any> {
@@ -83,26 +95,36 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
       return null
     }
     const { actions } = this.state.openRequest
+    const { dialogActionsProps = {}, buttonProps = {} } = this.props
     return (
-      <DialogActions>
-        {actions.map(({ text }, ii) => <Button id={`${ACTION_BTN_ID_PREF}:${ii}`} key={text} onClick={this.handleClose} color='primary' autoFocus={ii === actions.length - 1} >{text}</Button>)}
+      <DialogActions
+        {...dialogActionsProps}
+      >
+        {actions.map(({ text }, ii) => <Button {...buttonProps} id={`${ACTION_BTN_ID_PREF}:${ii}`} key={text} onClick={this.handleClose} color={ii === actions.length - 1 ? 'secondary' : 'primary'} >{text}</Button>)}
       </DialogActions>
     )
   }
 
   render () {
-    const { fullScreen } = this.props
+    const {
+      fullScreen,
+      dialogProps = {},
+      dialogTitleProps = {},
+      dialogContentProps = {},
+      dialogContentTextProps = {}
+    } = this.props
     const { title = '', message = '' } = this.state.openRequest || {}
     return (
       <Dialog
+        {...dialogProps}
         fullScreen={fullScreen}
         open={this.state.open}
         onClose={this.handleClose}
         aria-labelledby='ss-responsive-dialog-title'
       >
-        <DialogTitle id='ss-responsive-dialog-title'>{title}</DialogTitle>
-        <DialogContent>
-          <DialogContentText>{message}</DialogContentText>
+        {!!title && <DialogTitle {...dialogTitleProps} id='ss-responsive-dialog-title'>{title}</DialogTitle>}
+        <DialogContent {...dialogContentProps} >
+          <DialogContentText {...dialogContentTextProps} color='primary'>{message}</DialogContentText>
         </DialogContent>
         {this.renderActions()}
       </Dialog>
@@ -113,6 +135,9 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
 export const openDialog: IOpenDialog = async (params: IOpenDialogParams) => {
   if (!params.actions) {
     params.actions = [{ text: '取消' }, { text: '确定' }]
+  }
+  if (!params.title) {
+    params.title = ''
   }
   const { instance } = openDialog
   if (!instance) {

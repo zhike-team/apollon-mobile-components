@@ -6,24 +6,11 @@ import { Theme, withStyles, createStyles, StyledComponentProps } from '@material
 import './styles.scss'
 
 // 扩展
-declare module '@material-ui/core/styles/createMuiTheme' {
-  interface Theme {
-    status: {
-      danger: string
-    }
-  }
-  interface ThemeOptions {
-    status: {
-      danger: string
-    }
-  }
-}
-
 const styles = (theme: Theme) => createStyles({
   root: {
-    color: theme.status.danger,
+    color: theme.custom.gray,
     '&$checked': {
-      color: theme.status.danger
+      color: theme.custom.gray
     }
   },
   checked: {}
