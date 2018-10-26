@@ -5,6 +5,7 @@ import Icon from './icon/'
 import Checkbox from './checkbox'
 import StyledParagraph from './styled-paragraph'
 import theme from './theme'
+import Dialog, { openDialog } from './dialog'
 
 export {
   theme,
@@ -13,5 +14,7 @@ export {
   ScheduleList,
   ReportListItem,
   ImageButton,
-  Icon
+  Icon,
+  Dialog,
+  openDialog
 }

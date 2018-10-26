@@ -23,23 +23,23 @@ export interface IOpenDialogParams {
 
 export interface IOpenDialog {
   (params: IOpenDialogParams): Promise<number>,
-  instance?: ConfirmDialog,
+  instance?: SSDialog,
   pending?: Promise<number>
 }
 
-export interface ConfirmDialogPropInterface extends React.ClassAttributes<any> {
+export interface SSDialogPropInterface extends React.ClassAttributes<any> {
   fullScreen: boolean
 }
 
-export interface ConfirmDialogStateInterface extends React.ClassAttributes<any> {
+export interface SSDialogStateInterface extends React.ClassAttributes<any> {
   open: boolean,
   openRequest?: Required<IOpenDialogParams>
 }
 
-export class ConfirmDialog extends React.Component<ConfirmDialogPropInterface, ConfirmDialogStateInterface> {
+export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogStateInterface> {
   callback?: { resolve: (idx: number) => any, reject: (idx: number) => any }
 
-  constructor (props: ConfirmDialogPropInterface) {
+  constructor (props: SSDialogPropInterface) {
     super(props)
     openDialog.instance = this
     this.state = { open: false }
@@ -91,20 +91,16 @@ export class ConfirmDialog extends React.Component<ConfirmDialogPropInterface, C
   }
 
   render () {
-    if (!this.state.openRequest) {
-      return null
-    }
     const { fullScreen } = this.props
-    const { title, message } = this.state.openRequest
+    const { title = '', message = '' } = this.state.openRequest || {}
     return (
       <Dialog
-        id={`${ACTION_BTN_ID_PREF}:-1`}
         fullScreen={fullScreen}
         open={this.state.open}
         onClose={this.handleClose}
-        aria-labelledby='responsive-dialog-title'
+        aria-labelledby='ss-responsive-dialog-title'
       >
-        <DialogTitle id='responsive-dialog-title'>{title}</DialogTitle>
+        <DialogTitle id='ss-responsive-dialog-title'>{title}</DialogTitle>
         <DialogContent>
           <DialogContentText>{message}</DialogContentText>
         </DialogContent>
@@ -136,4 +132,4 @@ export const openDialog: IOpenDialog = async (params: IOpenDialogParams) => {
   return ret
 }
 
-export default withMobileDialog<ConfirmDialogPropInterface>()(ConfirmDialog)
+export default withMobileDialog<SSDialogPropInterface>()(SSDialog)
