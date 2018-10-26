@@ -1,12 +1,9 @@
 import * as React from 'react'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
+import StyledComponents from './with-style'
 import withMobileDialog from '@material-ui/core/withMobileDialog'
 import { WithWidth } from '@material-ui/core/withWidth'
+
+const { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } = StyledComponents
 
 const ACTION_BTN_ID_PREF = 'com.smartstudy.dialog-id-pref'
 
