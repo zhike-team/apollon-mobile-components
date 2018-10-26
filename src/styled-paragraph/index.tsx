@@ -5,38 +5,23 @@ import { Theme, withStyles, createStyles, StyledComponentProps } from '@material
 import Typography from '@material-ui/core/Typography'
 import './styles.css'
 
-// 扩展
-declare module '@material-ui/core/styles/createMuiTheme' {
-  interface Theme {
-    status: {
-      danger: string
-    }
-  }
-  interface ThemeOptions {
-    status: {
-      danger: string
-    }
-  }
-}
-
 const styles = (theme: Theme) => createStyles({
   root: {
     display: 'inline-flex'
   },
   title: {
-    fontSize: '1rem'
+    fontSize: 16
   },
   paragraph: {
-    // 14 / 16px
-    fontSize: '0.875rem',
-    marginBottom: '2rem'
+    fontSize: 14,
+    marginBottom: 32
   },
   icon: {
-    width: '1.25rem'
+    width: 20
   },
   iconSlot: {
     height: '100%',
-    marginRight: '0.5rem'
+    marginRight: 8
   },
   right: {
     display: 'flex',

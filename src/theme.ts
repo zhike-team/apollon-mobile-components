@@ -2,6 +2,21 @@
 import { createMuiTheme, Theme } from '@material-ui/core/styles'
 import orange from '@material-ui/core/colors/orange'
 
+declare module '@material-ui/core/styles/createMuiTheme' {
+  interface Theme {
+    custom: {
+      gray: string,
+      gray2: string
+    }
+  }
+  interface ThemeOptions {
+    custom: {
+      gray: string,
+      gray2: string
+    }
+  }
+}
+
 export default createMuiTheme({
   palette: {
     primary: {
@@ -11,8 +26,8 @@ export default createMuiTheme({
       main: '#3399FF'
     }
   },
-  status: {
-    // My business variables
-    danger: orange[500]
+  custom: {
+    gray: '#8F9DA5',
+    gray2: '#2E3236'
   }
 })

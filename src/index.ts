@@ -6,6 +6,7 @@ import Loading from './loading/'
 import Checkbox from './checkbox'
 import StyledParagraph from './styled-paragraph'
 import theme from './theme'
+import Dialog, { openDialog } from './dialog'
 
 export {
   theme,
@@ -15,5 +16,7 @@ export {
   ReportListItem,
   ImageButton,
   Icon,
+  Dialog,
+  openDialog,
   Loading
 }
