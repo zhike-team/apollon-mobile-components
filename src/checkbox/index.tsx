@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Checkbox, { CheckboxProps } from '@material-ui/core/Checkbox'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
-import './styles.scss'
+import './styles.css'
 
 // 扩展
 const styles = (theme: Theme) => createStyles({

@@ -71,3 +71,12 @@ src
 tsconfig.json
 tslint.json
 jest.config.js
+
+# .DS_Store
+.DS_Store
+
+# .cache
+.cache
+
+# storybooks
+*.story.*

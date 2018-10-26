@@ -3,7 +3,7 @@ import classNames from 'classnames'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import './styles.scss'
+import './styles.css'
 
 const styles = (theme: Theme) => createStyles({
   root: {

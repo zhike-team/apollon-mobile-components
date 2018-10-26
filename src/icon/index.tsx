@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './icon.scss'
+import './icon.css'
 import loadSprite from './loadSprite'
 
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
