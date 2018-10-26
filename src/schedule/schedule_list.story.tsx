@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
 import ScheduleList from './schedule_list'
 const data = {
   name: 'IELTS口语',
@@ -23,7 +24,7 @@ const onFinish = () => {
 }
 
 storiesOf('ScheduleList', module)
-  .add('完成', () => (
+  .add('完成', withInfo({ inline: true })(() => (
     <ScheduleList
       data={data}
       complete={true}
@@ -32,8 +33,8 @@ storiesOf('ScheduleList', module)
       onUnfinish={onUnfinish}
       onFinish={onFinish}
     />
-  ))
-  .add('学生未完成', () => (
+  )))
+  .add('学生未完成', withInfo({ inline: true })(() => (
     <ScheduleList
       complete={false}
       data={data}
@@ -42,8 +43,8 @@ storiesOf('ScheduleList', module)
       onUnfinish={onUnfinish}
       onFinish={onFinish}
     />
-  ))
-  .add('教师未完成', () => (
+  )))
+  .add('教师未完成', withInfo({ inline: true })(() => (
     <ScheduleList
       complete={false}
       data={data}
@@ -52,4 +53,4 @@ storiesOf('ScheduleList', module)
       onUnfinish={onUnfinish}
       onFinish={onFinish}
     />
-  ))
+  )))

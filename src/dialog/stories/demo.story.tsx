@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { MuiThemeProvider } from '@material-ui/core/styles'
+import { withInfo } from '@storybook/addon-info'
 import Button from '@material-ui/core/Button'
 import ConfirmDialog, { openDialog } from '../index'
 import theme from '../../theme'
@@ -22,9 +23,10 @@ async function handleClick () {
 }
 
 storiesOf('Confirm Dialog', module)
-  .add('click open', () => (
+  .add('click open', withInfo({ inline: true })(() => (
     <MuiThemeProvider theme={theme}>
       <Button onClick={handleClick} >打开</Button>
       <ConfirmDialog fullScreen={false} />
     </MuiThemeProvider>
   ))
+)
