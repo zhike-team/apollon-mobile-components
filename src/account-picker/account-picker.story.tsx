@@ -24,17 +24,23 @@ const handleSelect = (account: Account) => {
   alert(`select ${account.name}`)
 }
 
+const handleSearch = (keyword: string) => {
+  alert(`search ${keyword}`)
+}
+
 storiesOf('AccountPicker', module)
   .add('groupByName', withInfo({ inline: true })(() => (
       <AccountPicker
         accounts={accounts}
         group='name'
+        onSearch={handleSearch}
         onSelect={handleSelect}
       />
     )))
     .add('without group', withInfo({ inline: true })(() => (
       <AccountPicker
         accounts={accounts}
+        onSearch={handleSearch}
         onSelect={handleSelect}
       />
     )))
@@ -42,6 +48,7 @@ storiesOf('AccountPicker', module)
       <AccountPicker
         accounts={accounts}
         onSelect={handleSelect}
+        onSearch={handleSearch}
         selectedId={2}
       />
     )))

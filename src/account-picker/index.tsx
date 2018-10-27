@@ -2,6 +2,8 @@ import * as React from 'react'
 import List from '@material-ui/core/List'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import MenuItem from '@material-ui/core/MenuItem'
+import InputBase from '@material-ui/core/InputBase'
+import Icon from '../icon'
 
 import './styles.css'
 
@@ -23,12 +25,22 @@ export interface AccountPickerPropsInterface {
 
 export class AccountPicker extends React.Component<AccountPickerPropsInterface, {}> {
   render (): React.ReactNode {
+    const handleSearch = (event: any) => { this.props.onSearch && this.props.onSearch(event.target.value) }
     return (
-      <List
-        className='account-picker'
-      >
-        {this.props.group ? this.renderWithGroup() : this.renderWithoutGroup()}
-      </List>
+      <div className='account-picker'>
+        <div className='account-search'>
+          <Icon type='search' />
+          <InputBase
+            placeholder='搜索...'
+            onBlur={handleSearch}
+          />
+        </div>
+        <List
+          className='account-list'
+        >
+          {this.props.group ? this.renderWithGroup() : this.renderWithoutGroup()}
+        </List>
+      </div>
     )
   }
 
