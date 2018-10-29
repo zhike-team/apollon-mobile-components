@@ -7,6 +7,9 @@
       }
       .status {
         text-align: right;
+        .sm-icon-xs {
+          margin-right: 1rem;
+        }
       }
     }
     main {
@@ -14,10 +17,20 @@
       >div {
         flex: 1;
       }
+      .name {
+        .classroom {
+          color: #8F9DA5;
+        }
+      }
       .member {
         text-align: right;
+        color: #53595F;
         p {
           margin: 0;
+          span {
+            display: inline-block;
+            width: 3rem;
+          }
         }
       }
     }

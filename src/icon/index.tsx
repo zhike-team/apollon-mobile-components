@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './icon.css'
-import loadSprite from './loadSprite'
+import loadElement from '../loadElement'
 
 declare type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 
@@ -24,14 +24,18 @@ class Icon extends React.Component<IconPropsInterface, any> {
     size: 'md'
   }
   componentDidMount () {
-    loadSprite()
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.src = 'https://at.alicdn.com/t/font_886252_1yguo41d46s.js'
+    script.id = '__SMART_MOBILE_ICONFONT_NODE__'
+    loadElement(script, 'ICONFONT', 'head')
   }
   render () {
     const { type, className, size, ...restProps } = this.props
     const cls = `${className || ''} sm-icon sm-icon-${size}`
     return (
       <svg className={cls} {...restProps}>
-        <use xlinkHref={`#${type}`} />
+        <use xlinkHref={`#icon-${type}`} />
       </svg>
     )
   }
