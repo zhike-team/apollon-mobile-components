@@ -29,11 +29,13 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     return (
       <div className='account-picker'>
         <div className='account-search'>
-          <Icon type='search' />
-          <InputBase
-            placeholder='搜索...'
-            onBlur={handleSearch}
-          />
+          <div>
+            <Icon type='search' />
+            <InputBase
+              placeholder='搜索'
+              onBlur={handleSearch}
+            />
+          </div>
         </div>
         <List
           className='account-list'
@@ -72,7 +74,7 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     return subGroups.map(subGroup => (
       <li key={subGroup.key} className='section'>
         <ul>
-          <ListSubheader>{subGroup.key}</ListSubheader>
+          <ListSubheader className='list-header'>{subGroup.key}</ListSubheader>
           {subGroup.accounts.map(account => this.renderAccount(account))}
         </ul>
       </li>
@@ -95,8 +97,10 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
         onClick={onSelect}
         className={'account' + (selected ? ' selected' : '')}
       >
-        <span className='name'>{item.name}</span>
-        <span className='account'>{item.phone || item.email}</span>
+        <p>
+          <span className='name'>{item.name}</span>
+          <span className='account'>{item.phone || item.email}</span>
+        </p>
       </MenuItem>
     )
   }

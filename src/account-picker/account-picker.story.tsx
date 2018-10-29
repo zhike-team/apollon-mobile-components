@@ -21,11 +21,11 @@ const accounts: Account[] = [
 ]
 
 const handleSelect = (account: Account) => {
-  alert(`select ${account.name}`)
+  // alert(`select ${account.name}`)
 }
 
 const handleSearch = (keyword: string) => {
-  alert(`search ${keyword}`)
+  // alert(`search ${keyword}`)
 }
 
 storiesOf('AccountPicker', module)
