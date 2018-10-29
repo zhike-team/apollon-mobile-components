@@ -8,6 +8,7 @@ import StyledParagraph from './styled-paragraph'
 import theme from './theme'
 import DatePicker from './datepicker'
 import Dialog, { openDialog } from './dialog'
+import { AccountPicker } from './account-picker'
 
 export {
   theme,
@@ -20,5 +21,6 @@ export {
   Dialog,
   openDialog,
   DatePicker,
-  Loading
+  Loading,
+  AccountPicker
 }
