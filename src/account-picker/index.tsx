@@ -74,7 +74,7 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     return subGroups.map(subGroup => (
       <li key={subGroup.key} className='section'>
         <ul>
-          <ListSubheader>{subGroup.key}</ListSubheader>
+          <ListSubheader className='list-header'>{subGroup.key}</ListSubheader>
           {subGroup.accounts.map(account => this.renderAccount(account))}
         </ul>
       </li>

@@ -24,23 +24,27 @@
     .section {
       ul {
         padding-inline-start: 0;
-        li {
-          padding-left: 2rem;
-          height: 5rem;
-          font-size: 1.8rem;
-          color: #53595F;
-          border-bottom: 1px solid #eee;
-          &:first-child {
-            height: 2.4rem;
-            line-height: 2.4rem;
-            background: #EAEFF2;
-            font-size: 1.6rem;
-          }
+      }
+    }
+    .list-header{
+      height: 2.4rem;
+      line-height: 2.4rem;
+      background: #EAEFF2;
+      font-size: 1.6rem;
+    }
+    .account {
+      padding-left: 2rem;
+      height: 5rem;
+      font-size: 1.8rem;
+      color: #53595F;
+      p {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        .name {
+          display: inline-block;
+          width: 36%;
         }
       }
     }
-  }
-  span.name {
-    width: 36%;
   }
 }
