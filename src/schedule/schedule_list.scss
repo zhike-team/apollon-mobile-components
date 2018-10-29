@@ -5,10 +5,19 @@
       span {
         flex: 1;
       }
+      .time {
+        color: #39f;
+      }
       .status {
         text-align: right;
         .sm-icon-xs {
           margin-right: 1rem;
+        }
+        .blue {
+          color: #39f;
+        }
+        .red {
+          color: red;
         }
       }
     }
