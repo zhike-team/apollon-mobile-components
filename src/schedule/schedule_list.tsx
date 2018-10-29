@@ -46,17 +46,17 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       <div className='schedule-list'>
         <header>
           <span className='time'>{`${data.startTime}-${data.endTime}`}</span>
-          <span className='status'><Icon type='cross' size='md' />{complete ? '已完成' : '未完成'}</span>
+          <span className='status'>{complete ? <Icon type='correct-thick' size='xs' /> : <Icon type='cross-red' size='xs' />}{complete ? '已完成' : '未完成'}</span>
         </header>
         <main>
           <div className='name'>
             <p>{data.name}</p>
-            <p><Icon type='location' size='md' />{data.classroom}</p>
+            <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>
-            <p><Icon type='teacher' size='sm' />{data.studentName}</p>
-            <p><Icon type='exchange' size='sm' /></p>
-            <p><Icon type='student' size='md' />{data.teacherName}</p>
+            <p><Icon type='face-teacher' size='xs' /><span>{data.studentName}</span></p>
+            <p><Icon type='exchange' size='xxs' /></p>
+            <p><Icon type='face-student' size='xs' /><span>{data.teacherName}</span></p>
           </div>
         </main>
         <footer>
