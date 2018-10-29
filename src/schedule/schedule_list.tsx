@@ -27,7 +27,8 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       teacher = 'teacher',
       student = 'student'
     }
-    const completeButtonsDom = (<Button variant='outlined' size='large' color='primary' className='view-button' onClick={this.props.viewReport}> 查看反馈 </Button>)
+    // const completeButtonsDom = (<Button variant='outlined' size='large' color='primary' className='view-button' onClick={this.props.viewReport}> 查看反馈 </Button>)
+    const completeButtonsDom = ''
     const uncompleteButtonsDom = (
       <div>
         <p className='unfinish-button'>
