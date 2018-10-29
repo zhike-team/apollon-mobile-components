@@ -1,6 +1,7 @@
 import * as React from 'react'
 import './schedule_list.css'
 import Button from '@material-ui/core/Button'
+import Icon from '../icon'
 
 interface SchedulePropsInterface {
   data: {
@@ -45,16 +46,17 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       <div className='schedule-list'>
         <header>
           <span className='time'>{`${data.startTime}-${data.endTime}`}</span>
-          <span className='status'>图标{complete ? '已完成' : '未完成'}</span>
+          <span className='status'><Icon type='cross' size='md' />{complete ? '已完成' : '未完成'}</span>
         </header>
         <main>
           <div className='name'>
             <p>{data.name}</p>
-            <p>{data.classroom}</p>
+            <p><Icon type='location' size='md' />{data.classroom}</p>
           </div>
           <div className='member'>
-            <p>{data.studentName}</p>
-            <p>{data.teacherName}</p>
+            <p><Icon type='teacher' size='sm' />{data.studentName}</p>
+            <p><Icon type='exchange' size='sm' /></p>
+            <p><Icon type='student' size='md' />{data.teacherName}</p>
           </div>
         </main>
         <footer>
