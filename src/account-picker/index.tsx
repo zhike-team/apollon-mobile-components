@@ -33,7 +33,8 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
             <Icon type='search' />
             <InputBase
               placeholder='搜索'
-              onBlur={handleSearch}
+              // onBlur={handleSearch}
+              onChange={handleSearch}
             />
           </div>
         </div>
