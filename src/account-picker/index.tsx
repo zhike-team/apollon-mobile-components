@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import InputBase from '@material-ui/core/InputBase'
 import Icon from '../icon'
 
-import './styles.scss'
+import './styles.css'
 
 export interface Account {
   id: number
