@@ -15,6 +15,9 @@ const buttonStyles = (theme: Theme) => createStyles({
   },
   textPrimary: {
     color: theme.custom.gray
+  },
+  text: {
+    fontSize: '1.2rem' // for smart-mobile font defination
   }
 })
 
@@ -37,7 +40,7 @@ const dialogContentStyles = (theme: Theme) => createStyles({
 const dialogContentTextStyles = (theme: Theme) => createStyles({
   root: {
     color: theme.custom.gray2,
-    fontSize: 16,
+    fontSize: '1.6rem',
     borderRadius: 10
   }
 })
