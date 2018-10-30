@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import InputBase from '@material-ui/core/InputBase'
 import Icon from '../icon'
 
-import './styles.css'
+import './styles.scss'
 
 export interface Account {
   id: number
@@ -33,7 +33,8 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
             <Icon type='search' />
             <InputBase
               placeholder='搜索'
-              onBlur={handleSearch}
+              // onBlur={handleSearch}
+              onChange={handleSearch}
             />
           </div>
         </div>
