@@ -3,8 +3,6 @@ import { DatePicker, MuiPickersUtilsProvider } from 'material-ui-pickers'
 import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils'
 import loadElement from '../loadElement'
 
-import * as cnLocale from 'date-fns/locale/zh-CN'
-
 export interface DatePickerPropsInterface {
   date: any,
   onChange: (date: string) => void
@@ -26,7 +24,6 @@ export default class SmartDatePciker extends React.Component<DatePickerPropsInte
     return (
       <MuiPickersUtilsProvider
         utils={DateFnsUtils}
-        locale={cnLocale}
       >
         <DatePicker
           value={date}
