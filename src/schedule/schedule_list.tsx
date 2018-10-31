@@ -12,7 +12,7 @@ interface SchedulePropsInterface {
     endTime: Date,
     classroom: string
   },
-  complete: boolean | null,
+  complete: string | null,
   identify: string,
   viewReport: () => void,
   onUnfinish: () => void,
@@ -47,7 +47,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       <div className='schedule-list'>
         <header>
           <span className='time'>{`${data.startTime}-${data.endTime}`}</span>
-          <span className='status'>{complete ? <Icon type='correct-thick' size='xs' /> : <Icon type='cross-red' size='xs' />}{complete ? <span className='blue'>已完成</span> : <span className='red'>未完成</span>}</span>
+          <span className='status'>{complete === 'FINISHED' ? <Icon type='correct-thick' size='xs' /> : complete === 'UNFINISHED' ? <Icon type='cross-red' size='xs' /> : <Icon type='question' size='xs' />}{complete === 'FINISHED' ? <span className='blue'>已完成</span> : complete === 'UNFINISHED' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
         </header>
         <main>
           <div className='name'>
@@ -61,7 +61,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
           </div>
         </main>
         <footer>
-          {complete ? completeButtonsDom : identify === identifyType.teacher ? uncompleteButtonsDom : ''}
+          {complete === 'FINISHED' ? completeButtonsDom : complete === 'UNSURE' && identify === identifyType.teacher ? uncompleteButtonsDom : ''}
         </footer>
       </div>
     )
