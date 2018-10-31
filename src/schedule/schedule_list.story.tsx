@@ -27,7 +27,7 @@ storiesOf('ScheduleList', module)
   .add('完成', withInfo({ inline: true })(() => (
     <ScheduleList
       data={data}
-      complete={true}
+      status={'FINISHED'}
       identify={'student'}
       viewReport={viewReport}
       onUnfinish={onUnfinish}
@@ -36,7 +36,7 @@ storiesOf('ScheduleList', module)
   )))
   .add('学生未完成', withInfo({ inline: true })(() => (
     <ScheduleList
-      complete={false}
+      status={'UNSURE'}
       data={data}
       identify={'student'}
       viewReport={viewReport}
@@ -46,7 +46,7 @@ storiesOf('ScheduleList', module)
   )))
   .add('教师未完成', withInfo({ inline: true })(() => (
     <ScheduleList
-      complete={false}
+      status={'UNSURE'}
       data={data}
       identify={'teacher'}
       viewReport={viewReport}

@@ -12,7 +12,7 @@ interface SchedulePropsInterface {
     endTime: Date,
     classroom: string
   },
-  complete: string | null,
+  status: string | null,
   identify: string,
   viewReport: () => void,
   onUnfinish: () => void,
@@ -22,7 +22,7 @@ interface ScheduleStateInterface {}
 
 export default class Schedule extends React.Component<SchedulePropsInterface, ScheduleStateInterface> {
   public render () {
-    const { data, complete, identify } = this.props
+    const { data, status, identify } = this.props
     enum identifyType {
       teacher = 'teacher',
       student = 'student'
@@ -47,7 +47,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       <div className='schedule-list'>
         <header>
           <span className='time'>{`${data.startTime}-${data.endTime}`}</span>
-          <span className='status'>{complete === 'FINISHED' ? <Icon type='correct-thick' size='xs' /> : complete === 'UNFINISHED' ? <Icon type='cross-red' size='xs' /> : <Icon type='question' size='xs' />}{complete === 'FINISHED' ? <span className='blue'>已完成</span> : complete === 'UNFINISHED' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
+          <span className='status'>{status === 'FINISHED' ? <Icon type='correct-thick' size='xs' /> : status === 'UNFINISHED' ? <Icon type='cross-red' size='xs' /> : <Icon type='question' size='xs' />}{status === 'FINISHED' ? <span className='blue'>已完成</span> : status === 'UNFINISHED' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
         </header>
         <main>
           <div className='name'>
@@ -61,7 +61,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
           </div>
         </main>
         <footer>
-          {complete === 'FINISHED' ? completeButtonsDom : complete === 'UNSURE' && identify === identifyType.teacher ? uncompleteButtonsDom : ''}
+          {status === 'FINISHED' ? completeButtonsDom : status === 'UNSURE' && identify === identifyType.teacher ? uncompleteButtonsDom : ''}
         </footer>
       </div>
     )
