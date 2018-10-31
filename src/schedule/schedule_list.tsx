@@ -55,9 +55,9 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
             <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>
-            <p><Icon type='face-teacher' size='xs' /><span>{data.studentName}</span></p>
-            <p><Icon type='exchange' size='xxs' /></p>
-            <p><Icon type='face-student' size='xs' /><span>{data.teacherName}</span></p>
+            <p><span><Icon type='face-teacher' size='xs' /></span><span className='right'>{data.studentName}</span></p>
+            <p><span className='exchange'><Icon type='exchange' size='xxs' /></span></p>
+            <p><span><Icon type='face-student' size='xs' /></span><span className='right'>{data.teacherName}</span></p>
           </div>
         </main>
         <footer>
