@@ -39,6 +39,12 @@
           span {
             display: inline-block;
             width: 3rem;
+            overflow: hidden;
+            text-align: center;
+          }
+          .right {
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
         }
       }
