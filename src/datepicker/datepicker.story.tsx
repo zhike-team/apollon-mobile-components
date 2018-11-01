@@ -1,16 +1,13 @@
 import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
-import SmartDatePicker from './index'
+import DatePicker from './index'
 
-let currentDate = new Date()
-
-const handleChangeDate = (date: any) => {
-  currentDate = date
-  console.log('currentDate', currentDate)
+function handleShowDate (date: string) {
+  console.log('date', date)
 }
 
 storiesOf('Datepicker', module)
-  .add('Default datepicker', withInfo({ inline: true })(() => (
-    <SmartDatePicker date={currentDate} onChange={handleChangeDate} />
+  .add('datepicker', withInfo({ inline: true })(() => (
+    <DatePicker date={new Date()} onChange={handleShowDate} />
   )))

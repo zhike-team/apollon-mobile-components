@@ -33,7 +33,8 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
             <Icon type='search' />
             <InputBase
               placeholder='搜索'
-              onBlur={handleSearch}
+              // onBlur={handleSearch}
+              onChange={handleSearch}
             />
           </div>
         </div>
@@ -66,7 +67,7 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     }
 
     // sort and create subGroups
-    const sortedKeys = Object.keys(groupedAccounts).sort()
+    const sortedKeys = Object.keys(groupedAccounts).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'accent' }))
     const subGroups = sortedKeys.map(key => ({ key, accounts: groupedAccounts[key] }))
     if (unGroupedAccounts.length) subGroups.push({ key: 'ungrouped', accounts: unGroupedAccounts })
 

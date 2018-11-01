@@ -15,6 +15,9 @@ const buttonStyles = (theme: Theme) => createStyles({
   },
   textPrimary: {
     color: theme.custom.gray
+  },
+  text: {
+    fontSize: '1.2rem' // for smart-mobile font defination
   }
 })
 
@@ -22,6 +25,13 @@ const dialogStyles = (theme: Theme) => createStyles({
 })
 
 const dialogActionStyles = (theme: Theme) => createStyles({
+  root: {},
+  rootSingleButton: {
+    justifyContent: 'center'
+  }
+})
+
+const dialogTitleStyles = (theme: Theme) => createStyles({
 })
 
 const dialogContentStyles = (theme: Theme) => createStyles({
@@ -30,16 +40,40 @@ const dialogContentStyles = (theme: Theme) => createStyles({
 const dialogContentTextStyles = (theme: Theme) => createStyles({
   root: {
     color: theme.custom.gray2,
-    fontSize: 16,
+    fontSize: '1.6rem',
     borderRadius: 10
   }
 })
 
+export interface CustomDialogActionsPropInterface extends DialogActionsProps {
+  classes: DialogActionsProps['classes'] & {rootSingleButton?: string},
+  centerSingleButton?: boolean
+}
+
+class CustomDialogActions extends React.Component<CustomDialogActionsPropInterface, any> {
+  render () {
+    const { centerSingleButton = true, classes, ...passProps } = this.props
+    if (!centerSingleButton) {
+      return <DialogActions {...passProps} classes={classes} />
+    }
+
+    const isSingleButton = React.Children.count(this.props.children) === 1
+    const wrapClasses = { ...classes }
+    if (isSingleButton) {
+      wrapClasses.root = classes.rootSingleButton
+    } else {
+      wrapClasses.rootSingleButton = undefined
+    }
+
+    return <DialogActions {...passProps} classes={wrapClasses} />
+  }
+}
+
 export default {
   Button: withStyles(buttonStyles)(Button),
   Dialog: withStyles(dialogStyles)(Dialog),
-  DialogTitle: withStyles(dialogActionStyles)(DialogTitle),
-  DialogActions: withStyles(dialogActionStyles)(DialogActions),
+  DialogTitle: withStyles(dialogTitleStyles)(DialogTitle),
+  DialogActions: withStyles(dialogActionStyles)(CustomDialogActions),
   DialogContent: withStyles(dialogContentStyles)(DialogContent),
   DialogContentText: withStyles(dialogContentTextStyles)(DialogContentText)
 }
