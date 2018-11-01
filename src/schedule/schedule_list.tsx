@@ -11,7 +11,8 @@ interface SchedulePropsInterface {
     startTime: Date,
     endTime: Date,
     classroom: string,
-    time: string
+    time: string,
+    identification: string
   },
   status: string | null,
   identify: string,
@@ -53,7 +54,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         </header>
         <main>
           <div className='name'>
-            <p className='course-name'>{data.name}</p>
+            <p className='course-name'><span className='identification-box'><span className='identification'>{data.identification}</span></span><span>{data.name}</span></p>
             <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>
