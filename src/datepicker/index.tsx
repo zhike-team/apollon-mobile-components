@@ -1,35 +1,28 @@
-import * as React from 'react'
-import { DatePicker, MuiPickersUtilsProvider } from 'material-ui-pickers'
-import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils'
-import loadElement from '../loadElement'
+import React from 'react'
+import InfiniteCalendar from 'react-infinite-calendar'
+import 'react-infinite-calendar/styles.css'
 
 export interface DatePickerPropsInterface {
   date: any,
   onChange: (date: string) => void
 }
 
-export default class SmartDatePciker extends React.Component<DatePickerPropsInterface, {}> {
-
-  componentDidMount () { // import icons for date picker
-    const element = '<link rel="stylesheet" id="__SMART_MOBILE_DATEPICKER_ICONS_NODE__" href="https://fonts.googleapis.com/icon?family=Material+Icons">'
-    loadElement(element, 'DATEPICKER_ICONS', 'body')
-  }
+class DatePicker extends React.Component<DatePickerPropsInterface, any> {
 
   handleDateChange = (date: any) => {
-    return this.props.onChange(date)
+    this.props.onChange(date)
   }
 
-  render (): React.ReactNode {
+  render () {
     const { date } = this.props
     return (
-      <MuiPickersUtilsProvider
-        utils={DateFnsUtils}
-      >
-        <DatePicker
-          value={date}
-          onChange={this.handleDateChange}
-        />
-      </MuiPickersUtilsProvider>
+      <InfiniteCalendar
+        className='smart-date-picker' // for modifying css
+        selected={date}
+        onSelect={this.handleDateChange}
+      />
     )
   }
 }
+
+export default DatePicker
