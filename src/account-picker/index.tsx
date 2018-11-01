@@ -35,6 +35,7 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
               placeholder='搜索'
               // onBlur={handleSearch}
               onChange={handleSearch}
+              className='search'
             />
           </div>
         </div>
