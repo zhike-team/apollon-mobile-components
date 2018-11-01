@@ -17,7 +17,7 @@ const buttonStyles = (theme: Theme) => createStyles({
     color: theme.custom.gray
   },
   text: {
-    fontSize: '1.2rem' // for smart-mobile font defination
+    fontSize: '1.4rem' // for smart-mobile font defination
   }
 })
 
