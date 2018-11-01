@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import InfiniteCalendar from 'react-infinite-calendar'
 import 'react-infinite-calendar/styles.css'
 

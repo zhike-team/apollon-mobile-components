@@ -34,6 +34,23 @@
       .name {
         .course-name {
           font-size: 1.6rem;
+          display: flex;
+          .identification-box {
+            display: flex;
+            align-items: center;
+          }
+          .identification {
+            display: inline-block;
+            height: 1.4rem;
+            width: 1.4rem;
+            margin-right: 1rem;
+            border-radius: 0.2rem;
+            border: 1px solid #39f;
+            text-align: center;
+            line-height: 1.4rem;
+            font-size: 1rem;
+            color: #39f;
+          }
         }
         .classroom {
           font-size: 1.2rem;
