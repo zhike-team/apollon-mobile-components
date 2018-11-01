@@ -10,7 +10,7 @@ export interface DatePickerPropsInterface {
 const locale = {
   locale: require('date-fns/locale/zh_cn'),
   headerFormat: 'YYYY年MMMD日',
-  weekdays : '星期日_星期一_星期二_星期三_星期四_星期五_星期六'.split('_'),
+  weekdays : '周日_周一_周二_周三_周四_周五_周六'.split('_'),
   todayLabel: {
     long: '今天'
   }
