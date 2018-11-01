@@ -10,7 +10,8 @@ interface SchedulePropsInterface {
     teacherName: string,
     startTime: Date,
     endTime: Date,
-    classroom: string
+    classroom: string,
+    time: string
   },
   status: string | null,
   identify: string,
@@ -47,7 +48,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
     return (
       <div className='schedule-list'>
         <header>
-          <span className='time'>{`${data.startTime}-${data.endTime}`}</span>
+          <span className='time'>{data.time}</span>
           <span className='status'>{status === 'FINISHED' ? <Icon type='correct-thick' size='xs' /> : status === 'UNFINISHED' ? <Icon type='cross-red' size='xs' /> : <Icon type='question' size='xs' />}{status === 'FINISHED' ? <span className='blue'>已完成</span> : status === 'UNFINISHED' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
         </header>
         <main>
@@ -56,9 +57,9 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
             <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>
-            <p><span><Icon type='face-teacher' size='xs' /></span><span className='right'>{data.studentName}</span></p>
+            <p><span><Icon type='face-teacher' size='xs' /></span><span className='right'>{data.teacherName}</span></p>
             <p><span className='exchange'><Icon type='exchange' size='xxs' /></span></p>
-            <p><span><Icon type='face-student' size='xs' /></span><span className='right'>{data.teacherName}</span></p>
+            <p><span><Icon type='face-student' size='xs' /></span><span className='right'>{data.studentName || '班课'}</span></p>
           </div>
         </main>
         <footer>

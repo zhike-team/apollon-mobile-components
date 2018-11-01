@@ -8,7 +8,8 @@ const data = {
   teacherName: 'LF2',
   startTime: new Date(),
   endTime: new Date(),
-  classroom: '北京新中关学习中心'
+  classroom: '北京新中关学习中心',
+  time: '9:20-10:20'
 }
 
 const viewReport = () => {
