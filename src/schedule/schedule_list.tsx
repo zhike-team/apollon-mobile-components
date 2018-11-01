@@ -53,7 +53,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         </header>
         <main>
           <div className='name'>
-            <p>{data.name}</p>
+            <p className='course-name'>{data.name}</p>
             <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>

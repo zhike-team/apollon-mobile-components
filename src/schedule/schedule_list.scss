@@ -1,15 +1,17 @@
 .schedule-list {
-    padding: 16px;
+    padding: 1.6rem;
     header {
       display: flex;
       span {
         flex: 1;
       }
       .time {
+        font-size: 1.8rem;
         color: #39f;
       }
       .status {
         text-align: right;
+        font-size: 1.4rem;
         .sm-icon-xs {
           margin-right: 1rem;
         }
@@ -30,7 +32,11 @@
         flex: 1;
       }
       .name {
+        .course-name {
+          font-size: 1.6rem;
+        }
         .classroom {
+          font-size: 1.2rem;
           color: #8F9DA5;
         }
       }
@@ -44,6 +50,7 @@
             width: 3rem;
             overflow: hidden;
             text-align: center;
+            font-size: 1.2rem;
           }
           .right {
             white-space: nowrap;
@@ -66,10 +73,10 @@
         }
       }
       .finished-button {
-        padding-left: 10px;
+        padding-left: 1rem;
       }
       .unfinish-button {
-        padding-right: 10px;
+        padding-right: 1rem;
       }
     }
 }
