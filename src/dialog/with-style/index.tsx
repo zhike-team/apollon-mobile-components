@@ -22,6 +22,9 @@ const buttonStyles = (theme: Theme) => createStyles({
 })
 
 const dialogStyles = (theme: Theme) => createStyles({
+  paper: {
+    maxWidth: '75%'
+  }
 })
 
 const dialogActionStyles = (theme: Theme) => createStyles({
