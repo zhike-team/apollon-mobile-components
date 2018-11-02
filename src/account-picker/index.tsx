@@ -12,10 +12,12 @@ export interface Account {
   name: string
   phone?: string
   email?: string
+  organizationId: number
 }
 
 export interface AccountPickerPropsInterface {
   accounts: Account[] // 可选列表
+  currentOrganizationId: number // 当前站点id
   selected?: Account // 当前选择的账户
   selectedId?: number // 当前选择的id，优先级低于 selected
   group?: string // 分组字段
@@ -91,6 +93,7 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
   renderAccount (item: Account): React.ReactNode {
     const selected = (item === this.props.selected) || (item.id === this.props.selectedId)
     const onSelect = () => { this.props.onSelect && this.props.onSelect(item) }
+    const { currentOrganizationId } = this.props
     return (
       <MenuItem
         button={true}
@@ -100,8 +103,8 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
         className={'account' + (selected ? ' selected' : '')}
       >
         <p>
-          <span className='name'>{item.name}</span>
-          <span className='account'>{item.phone || item.email}</span>
+          <span className='name'>{item.organizationId !== currentOrganizationId ? '(跨)' : ''}{item.name}</span>
+          {/* <span className='account'>{item.phone || item.email}</span> */}
         </p>
       </MenuItem>
     )
