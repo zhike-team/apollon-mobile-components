@@ -15,7 +15,7 @@ async function handleClick () {
       message: `message: message: message: message: message: message: ${counter - 2}`
     }),
     openDialog({
-      message: `message: message: message: message: message: message: ${counter - 1}`,
+      message: `1`,
       actions: [{ text: 'btn1' }, { text: 'btn2' }, { text: 'btn3' }]
     })
   ])
