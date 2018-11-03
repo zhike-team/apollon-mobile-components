@@ -34,7 +34,8 @@ export interface IOpenDialog {
 }
 
 export interface SSDialogPropInterface extends React.ClassAttributes<any> {
-  fullScreen: boolean,
+  fullScreen?: boolean,
+  fullWidth?: boolean,
   buttonProps?: ButtonProps,
   dialogProps?: DialogProps,
   dialogActionsProps?: DialogActionsProps,
@@ -107,7 +108,8 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
 
   render () {
     const {
-      fullScreen,
+      fullScreen = false,
+      fullWidth = true,
       dialogProps = {},
       dialogTitleProps = {},
       dialogContentProps = {},
@@ -118,6 +120,7 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
       <Dialog
         {...dialogProps}
         fullScreen={fullScreen}
+        fullWidth={fullWidth}
         open={this.state.open}
         onClose={this.handleClose}
         aria-labelledby='ss-responsive-dialog-title'
