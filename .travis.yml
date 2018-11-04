@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-  - "8"
+- '8'
 script: npm run lint && npm test
 before_deploy: npm run build
 deploy:
   provider: npm
   email: banyudu@gmail.com
   api_key:
-    secure: dZjjU2+/6fpgriRQCn5ohh/J8DkRWur2cDhKaqrBRUE1m9Js6mKSD+1z0dTDQHVHueivXJGF3YAa+ElWnjmlUze4eXHJLndRRX5/lblIB7fS7I84DXyvQHVBb1QdVs7/ZRXkP7sA+Yby+RSVy3MidbKFQ9ocbhWbst1hMMlCoVKvXv82W6nBm3EsbjTHUONlnUy3MVnHs8uKPUs7cM+mvQGcgXPagEDQDMPNTwnafj0XbnJv7JWGitCqmC58v+MzImBlKo64O3zIqdzZTcbuVUcIJWmLkl0oHE+IBOMoX0295ExocSIWiY70PAIerwATIZ0AEVDzTZDYGcEPhN8kCx0W0lNxtpDJbFpwnU13PiRZhjc3q56T/6rcSf0vX+u8U90gnSZOg9LxUmgg123XcXCokE+xF+7uHQzkdJOIBR1UFUxOxsvUVaLebA+nyztOamwFnqJcj41gEj6RWUqVEUMF0nb1LVk0y6CgObpMjxWbNEZylg03EGXQnyfi16SPkY9u4ZozFczAsZRgGH0AmwiULoCN0JrbepibEyh6c4GoLADhlO/g8I6e+MNduJT6E5rVmidTUCY7uPvpfSvLq4Od/ygJ1eI7tpzbC2F7QaV3T86M/obyB6SrkLkKtozUUHXwFPMvbBwSg//Qm65805Kzp0f1oNZyzaBq4oIeUw8=
+    secure: CERsr/rm2403Nbg4mFoKJT4uYjp/0SV72/Hn4Z1pLRa+NBj4gBs9ebeLyLLnQk3RyLD8c04Rcs+Lqi7hgrsdIIkjtOz6GvzzxaJ7HfgiWIOGMn301ZaPSx1kOq8539fFRy5XZ+dpbJDEwkmATvlDE3Hpi78euqAVjO69skEB5vvcX6O2MQ/NFB2GfxRgukKAaT6+2VoX4fRDa/BqL3QW0B5pkuzAavU+KNF8lWcSxLFmy2URvdFUStoOBZg6udcyxkgegWue1tw2UjF80KZ6PdK/G/ARdfo+R17xMseSsTxthnUgoKdWdi3wuiT+kEUb4ssYk4GIRi+ucqiqooXAn9rWO0o6UQmwDjaS8RrrlhvtrCziuKXKgF3BR7D+cnK6B95CXqQOM5QG0/ei2+PD0eyt7YtcrQNrZT/9hItMB+FrKstM7YERrPLjVnaFeGZrm0ud+a81mk/4cx2IoVgMf59yJG12OPxyBzLSx/IFzbcbx46gv18eWRpgdoU8rfeT80Ef1GHIG7VAkW1WWqpIBU0mIhpjvRoeUEJ3k28K+C3kQrD8aAYcpF6CcHouOxZFxgRDuqtGTNWOVdHGyEw2xeL/+rbmb5mVHGHaL8rWPRzKNTyGwpHBXz3bOUiftvSXtbCNr9m8E7MRaFuLDjwG5oAQBTOeF4C23Ea0eZgChVk=
   on:
     tags: true
     branch: master
   tag: latest
 after_success:
-  - npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
+- npm run deploy-storybook -- --ci --host-token-env-variable=GITHUB_TOKEN
