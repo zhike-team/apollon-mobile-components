@@ -50,7 +50,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       <div className='schedule-list'>
         <header>
           <span className='time'>{data.time}</span>
-          <span className='status'>{status === 'FINISHED' ? <Icon type='correct-thick' size='sm' /> : status === 'UNFINISH' ? <Icon type='cross-red' size='xs' /> : <Icon type='question' size='xs' />}{status === 'FINISHED' ? <span className='blue'>已完成</span> : status === 'UNFINISH' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
+          <span className='status'>{status === 'FINISHED' ? <Icon type='correct-thick' size='sm' /> : status === 'UNFINISH' ? <Icon type='cross-red' size='sm' /> : <Icon type='question' size='sm' />}{status === 'FINISHED' ? <span className='blue'>已完成</span> : status === 'UNFINISH' ? <span className='red'>未完成</span> : <span className='gray'>未确认</span>}</span>
         </header>
         <main>
           <div className='name'>

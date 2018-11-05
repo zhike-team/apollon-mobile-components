@@ -12,8 +12,10 @@
       .status {
         text-align: right;
         font-size: 1.4rem;
-        .sm-icon-xs {
-          margin-right: 1rem;
+        .sm-icon-sm {
+          height: 1.4rem!important;
+          width: 1.4rem!important;
+          margin-right: 0.8rem;
         }
         .blue {
           color: #39f;
