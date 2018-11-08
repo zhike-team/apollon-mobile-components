@@ -1,9 +1,9 @@
 import * as React from 'react'
 import './report-list-item.css'
 
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from '@material-ui/core/ListItemText'
-import Avatar from '@material-ui/core/Avatar'
+// import ListItem from '@material-ui/core/ListItem'
+// import ListItemText from '@material-ui/core/ListItemText'
+import Icon from '../icon'
 
 export interface ReportListItemPropsInterface {
   icon: string
@@ -17,10 +17,15 @@ interface ReportListItemStateInterface {}
 export class ReportListItem extends React.Component<ReportListItemPropsInterface, ReportListItemStateInterface> {
   public render () {
     return (
-      <ListItem className='report-list-item' button={true} onClick={this.props.onReportClick}>
-        <Avatar className='icon'>{this.props.icon}</Avatar>
-        <ListItemText className='text' primary={this.props.primaryText} secondary={this.props.secondaryText} />
-      </ListItem>
+      <div className='report-list-item' onClick={this.props.onReportClick}>
+        <div className='icon-box'>
+          <Icon type={this.props.icon} className='icon' />
+        </div>
+        <div className='title-box'>
+          <span className='primary-text'>{this.props.primaryText}</span>
+          {this.props.secondaryText ? <span className='secondary-text'>{this.props.secondaryText}</span> : ''}
+        </div>
+      </div>
     )
   }
 }
