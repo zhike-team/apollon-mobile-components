@@ -80,3 +80,6 @@ jest.config.js
 
 # storybooks
 *.story.*
+
+# travis out
+out*

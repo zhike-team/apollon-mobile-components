@@ -6,6 +6,7 @@ before_deploy: npm run build
 deploy:
   provider: npm
   email: banyudu@gmail.com
+  skip_cleanup: true
   api_key:
     secure: CERsr/rm2403Nbg4mFoKJT4uYjp/0SV72/Hn4Z1pLRa+NBj4gBs9ebeLyLLnQk3RyLD8c04Rcs+Lqi7hgrsdIIkjtOz6GvzzxaJ7HfgiWIOGMn301ZaPSx1kOq8539fFRy5XZ+dpbJDEwkmATvlDE3Hpi78euqAVjO69skEB5vvcX6O2MQ/NFB2GfxRgukKAaT6+2VoX4fRDa/BqL3QW0B5pkuzAavU+KNF8lWcSxLFmy2URvdFUStoOBZg6udcyxkgegWue1tw2UjF80KZ6PdK/G/ARdfo+R17xMseSsTxthnUgoKdWdi3wuiT+kEUb4ssYk4GIRi+ucqiqooXAn9rWO0o6UQmwDjaS8RrrlhvtrCziuKXKgF3BR7D+cnK6B95CXqQOM5QG0/ei2+PD0eyt7YtcrQNrZT/9hItMB+FrKstM7YERrPLjVnaFeGZrm0ud+a81mk/4cx2IoVgMf59yJG12OPxyBzLSx/IFzbcbx46gv18eWRpgdoU8rfeT80Ef1GHIG7VAkW1WWqpIBU0mIhpjvRoeUEJ3k28K+C3kQrD8aAYcpF6CcHouOxZFxgRDuqtGTNWOVdHGyEw2xeL/+rbmb5mVHGHaL8rWPRzKNTyGwpHBXz3bOUiftvSXtbCNr9m8E7MRaFuLDjwG5oAQBTOeF4C23Ea0eZgChVk=
   on:

@@ -74,3 +74,6 @@ src/**/*.css
 
 # .cache
 .cache
+
+# travis out
+out*
