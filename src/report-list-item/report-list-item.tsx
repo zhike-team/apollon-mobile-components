@@ -1,8 +1,5 @@
 import * as React from 'react'
 import './report-list-item.css'
-
-// import ListItem from '@material-ui/core/ListItem'
-// import ListItemText from '@material-ui/core/ListItemText'
 import Icon from '../icon'
 
 export interface ReportListItemPropsInterface {
