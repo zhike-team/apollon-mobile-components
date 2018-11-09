@@ -3,6 +3,7 @@ import classNames from 'classnames'
 // tslint:disable-next-line
 import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import Icon from '../icon/'
 import './styles.css'
 
 const styles = (theme: Theme) => createStyles({
@@ -41,14 +42,15 @@ export interface StyledParagraphPropInterface {
   text?: string,
   title?: string,
   iconProps?: React.ImgHTMLAttributes<any>
+  type: string
 }
 
 const StyledParagraph = (props: StyledParagraphPropInterface) => {
-  const { classes = {}, text = '', title = '', iconProps } = props
+  const { classes = {}, text = '', title = '', iconProps, type } = props
   const hasIcon = !!iconProps
   const iconDom = hasIcon && (
     <div className={classes.iconSlot}>
-      <img {...iconProps} className={classes.icon} />
+      <Icon type={type} size='sm'/>
     </div>
   )
   return (
