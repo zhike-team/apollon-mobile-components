@@ -29,23 +29,31 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
       teacher = 'teacher',
       student = 'student'
     }
-    // const completeButtonsDom = (<Button variant='outlined' size='large' color='primary' className='view-button' onClick={this.props.viewReport}> 查看反馈 </Button>)
-    const completeButtonsDom = ''
-    const uncompleteButtonsDom = ''
-    // const uncompleteButtonsDom = (
-    //   <div>
-    //     <p className='unfinish-button'>
-    //       <Button variant='outlined' size='large' color='primary' onClick={this.props.onUnfinish}>
-    //         未完成
-    //       </Button>
-    //     </p>
-    //     <p className='finished-button'>
-    //       <Button variant='contained' size='large' color='primary' onClick={this.props.onFinish}>
-    //         完成
-    //       </Button>
-    //     </p>
-    //   </div>
-    // )
+    const completeButtonsDom = (
+      <Button
+        variant='outlined'
+        size='large'
+        color='primary'
+        className='view-button'
+        onClick={this.props.viewReport}
+      >
+        查看反馈
+      </Button>
+    )
+    const uncompleteButtonsDom = (
+      <div>
+        <p className='unfinish-button'>
+          <Button variant='outlined' size='large' color='primary' onClick={this.props.onUnfinish}>
+            未完成
+          </Button>
+        </p>
+        <p className='finished-button'>
+          <Button variant='contained' size='large' color='primary' onClick={this.props.onFinish}>
+            完成
+          </Button>
+        </p>
+      </div>
+    )
     return (
       <div className='schedule-list'>
         <header>
