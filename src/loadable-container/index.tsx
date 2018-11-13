@@ -39,7 +39,7 @@ class LoadableContainer extends React.Component<LoadMorePropsInterface, any> {
         <div className='contents'>
           {this.props.children}
         </div>
-        <div className='operation'>
+        <div className='footer'>
           {this.renderFooter(noMore, loading || false, onLoad)}
         </div>
       </div>
