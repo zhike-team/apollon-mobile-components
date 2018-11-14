@@ -11,7 +11,8 @@ const styles = (theme: Theme) => createStyles({
     display: 'inline-flex'
   },
   title: {
-    fontSize: 16
+    fontSize: 16,
+    lineHeight: '1.125em'
   },
   paragraph: {
     fontSize: 14,
