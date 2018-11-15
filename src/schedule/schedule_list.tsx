@@ -16,6 +16,7 @@ interface SchedulePropsInterface {
   },
   status: string | null,
   identify: string,
+  editPer: boolean,
   viewReport: () => void,
   onUnfinish: () => void,
   onFinish: () => void
@@ -24,7 +25,7 @@ interface ScheduleStateInterface {}
 
 export default class Schedule extends React.Component<SchedulePropsInterface, ScheduleStateInterface> {
   public render () {
-    const { data, status, identify } = this.props
+    const { data, status, identify, editPer } = this.props
     enum identifyType {
       teacher = 'teacher',
       student = 'student'
@@ -76,7 +77,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
             <p><span><Icon type='face-student' size='xs' /></span><span className='right'>{data.studentName || '班课'}</span></p>
           </div>
         </main>
-        <footer>
+        <footer className={`${!editPer ? 'hide' : ''}`}>
           {status === 'FINISHED' ? completeButtonsDom : status === 'UNSURE' && identify === identifyType.teacher ? uncompleteButtonsDom : ''}
         </footer>
       </div>
