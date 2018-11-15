@@ -34,7 +34,7 @@ storiesOf('ScheduleList', module)
       viewReport={viewReport}
       onUnfinish={onUnfinish}
       onFinish={onFinish}
-      editPer={true}
+      editPermission={true}
     />
   )))
   .add('学生未完成', withInfo({ inline: true })(() => (
@@ -45,7 +45,7 @@ storiesOf('ScheduleList', module)
       viewReport={viewReport}
       onUnfinish={onUnfinish}
       onFinish={onFinish}
-      editPer={true}
+      editPermission={true}
     />
   )))
   .add('教师未完成', withInfo({ inline: true })(() => (
@@ -56,6 +56,6 @@ storiesOf('ScheduleList', module)
       viewReport={viewReport}
       onUnfinish={onUnfinish}
       onFinish={onFinish}
-      editPer={false}
+      editPermission={false}
     />
   )))
