@@ -3,6 +3,7 @@ import './loadable-container.css'
 
 interface LoadMorePropsInterface {
   noMore: boolean
+  noFooter?: boolean
   loading?: boolean,
   onLoad: () => void
 }
@@ -30,7 +31,8 @@ class LoadableContainer extends React.Component<LoadMorePropsInterface, any> {
     const {
       noMore,
       loading,
-      onLoad
+      onLoad,
+      noFooter
     } = this.props
     return (
       <div
@@ -39,9 +41,7 @@ class LoadableContainer extends React.Component<LoadMorePropsInterface, any> {
         <div className='contents'>
           {this.props.children}
         </div>
-        <div className='footer'>
-          {this.renderFooter(noMore, loading || false, onLoad)}
-        </div>
+        {!noFooter && <div className='footer'>{this.renderFooter(noMore, loading || false, onLoad)}</div>}
       </div>
     )
   }
