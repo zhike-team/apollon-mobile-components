@@ -25,6 +25,7 @@ interface ScheduleStateInterface {}
 export default class Schedule extends React.Component<SchedulePropsInterface, ScheduleStateInterface> {
   public render () {
     const { data, status, identify } = this.props
+    console.log(data.identification)
     enum identifyType {
       teacher = 'teacher',
       student = 'student'
@@ -62,7 +63,12 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         </header>
         <main>
           <div className='name'>
-            <p className='course-name'><span className='identification-box'><span className='identification'>{data.identification}</span></span><span>{data.name}</span></p>
+            <p className='course-name'>
+              <span className={`identification-box ${!data.identification ? 'identification-hide' : ''}`}>
+                <span className='identification'>{data.identification}</span>
+              </span>
+              <span>{data.name}</span>
+            </p>
             <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
           </div>
           <div className='member'>

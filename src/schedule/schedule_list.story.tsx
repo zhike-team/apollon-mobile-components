@@ -10,7 +10,7 @@ const data = {
   endTime: new Date(),
   classroom: '北京新中关学习中心',
   time: '9:20-10:20',
-  identification: '个'
+  identification: ''
 }
 
 const viewReport = () => {
