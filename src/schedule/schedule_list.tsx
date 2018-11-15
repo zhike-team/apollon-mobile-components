@@ -25,7 +25,6 @@ interface ScheduleStateInterface {}
 export default class Schedule extends React.Component<SchedulePropsInterface, ScheduleStateInterface> {
   public render () {
     const { data, status, identify } = this.props
-    console.log(data.identification)
     enum identifyType {
       teacher = 'teacher',
       student = 'student'
