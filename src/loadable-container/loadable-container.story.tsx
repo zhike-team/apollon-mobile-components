@@ -32,6 +32,7 @@ storiesOf('Loadable Container', module)
         noMore={count <= page}
         loading={loading}
         onLoad={add}
+        noFooter={true}
       >
         {renderDom(page)}
       </LoadableContainer>
