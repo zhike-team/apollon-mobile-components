@@ -1,5 +1,6 @@
 .loadable-container {
   background: transparent;
+  overflow: hidden; // for bfc
 
   .footer {
     height: 5rem;
