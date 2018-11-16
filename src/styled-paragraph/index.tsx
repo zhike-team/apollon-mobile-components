@@ -54,13 +54,14 @@ const StyledParagraph = (props: StyledParagraphPropInterface) => {
       <Icon type={type} size='sm'/>
     </div>
   )
+  const str = text.replace(/↵/g, '<br/>')
   return (
     <div className={classes.root} >
       {hasIcon && iconDom}
       <div className={classes.right}>
         <Typography color={'secondary'} classes={{ root: classes.title }}>{title}</Typography>
         <p>
-          <Typography color={'primary'} classes={{ root: classes.paragraph }}>{text}</Typography>
+          <Typography color={'primary'} classes={{ root: classes.paragraph }} dangerouslySetInnerHTML={{ __html: str || '' }}/>
         </p>
       </div>
     </div>
