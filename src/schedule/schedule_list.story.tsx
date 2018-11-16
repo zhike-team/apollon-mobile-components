@@ -2,6 +2,8 @@ import * as React from 'react'
 import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import ScheduleList from './schedule_list'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import theme from '../theme'
 const data = {
   name: 'IELTS口语',
   studentName: 'LF1',
@@ -27,15 +29,17 @@ const onFinish = () => {
 
 storiesOf('ScheduleList', module)
   .add('完成', withInfo({ inline: true })(() => (
-    <ScheduleList
-      data={data}
-      status={'FINISHED'}
-      identify={'student'}
-      viewReport={viewReport}
-      onUnfinish={onUnfinish}
-      onFinish={onFinish}
-      editPermission={true}
-    />
+    <MuiThemeProvider theme={theme}>
+      <ScheduleList
+        data={data}
+        status={'FINISHED'}
+        identify={'student'}
+        viewReport={viewReport}
+        onUnfinish={onUnfinish}
+        onFinish={onFinish}
+        editPermission={true}
+      />
+    </MuiThemeProvider>
   )))
   .add('学生未完成', withInfo({ inline: true })(() => (
     <ScheduleList
@@ -49,13 +53,15 @@ storiesOf('ScheduleList', module)
     />
   )))
   .add('教师未完成', withInfo({ inline: true })(() => (
-    <ScheduleList
-      status={'UNSURE'}
-      data={data}
-      identify={'teacher'}
-      viewReport={viewReport}
-      onUnfinish={onUnfinish}
-      onFinish={onFinish}
-      editPermission={false}
-    />
+    <MuiThemeProvider theme={theme}>
+      <ScheduleList
+        status={'UNSURE'}
+        data={data}
+        identify={'teacher'}
+        viewReport={viewReport}
+        onUnfinish={onUnfinish}
+        onFinish={onFinish}
+        editPermission={true}
+      />
+    </MuiThemeProvider>
   )))

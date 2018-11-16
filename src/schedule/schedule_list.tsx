@@ -1,7 +1,10 @@
 import * as React from 'react'
 import './schedule_list.css'
-import Button from '@material-ui/core/Button'
 import Icon from '../icon'
+import StyledComponents from './with-style'
+
+import { Theme, withStyles, createStyles, StyledComponentProps } from '@material-ui/core/styles'
+const { Button } = StyledComponents
 
 interface SchedulePropsInterface {
   data: {
@@ -49,7 +52,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
           </Button>
         </p>
         <p className='finished-button'>
-          <Button variant='contained' size='large' color='primary' onClick={this.props.onFinish}>
+          <Button variant='contained' size='large' color='secondary' onClick={this.props.onFinish}>
             完成
           </Button>
         </p>
