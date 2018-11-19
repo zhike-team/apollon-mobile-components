@@ -1,11 +1,12 @@
 {
   "name": "@zhike/apollon-mobile-components",
-  "version": "0.2.6",
+  "version": "0.2.10",
   "description": "React components for apollon-mobile-frontend",
   "main": "./build/lib/index.js",
   "types": "./build/lib/index.d.ts",
   "dependencies": {
     "@material-ui/core": "^3.3.1",
+    "@types/sanitize-html": "^1.18.2",
     "classnames": "^2.2.6",
     "copy-webpack-plugin": "^4.5.4",
     "date-fns": "^1.29.0",
@@ -15,7 +16,8 @@
     "react": "^16.5.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.2",
-    "react-infinite-calendar": "^2.3.1"
+    "react-infinite-calendar": "^2.3.1",
+    "sanitize-html": "^1.19.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
