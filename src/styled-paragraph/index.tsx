@@ -5,6 +5,7 @@ import { Theme, withStyles, createStyles, StyledComponentProps } from '@material
 import Typography from '@material-ui/core/Typography'
 import Icon from '../icon/'
 import './styles.css'
+const sanitizeHtml = require('sanitize-html')
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -54,14 +55,17 @@ const StyledParagraph = (props: StyledParagraphPropInterface) => {
       <Icon type={type} size='sm'/>
     </div>
   )
-  const str = text.replace(/↵/g, '<br/>')
+  const dirty = text.replace(/↵/g, '<br/>')
+  const clean = sanitizeHtml(dirty, {
+    allowedTags: ['br']
+  })
   return (
     <div className={classes.root} >
       {hasIcon && iconDom}
       <div className={classes.right}>
         <Typography color={'secondary'} classes={{ root: classes.title }}>{title}</Typography>
         <p>
-          <Typography color={'primary'} classes={{ root: classes.paragraph }} dangerouslySetInnerHTML={{ __html: str || '' }}/>
+          <Typography color={'primary'} classes={{ root: classes.paragraph }} dangerouslySetInnerHTML={{ __html: clean || '' }}/>
         </p>
       </div>
     </div>

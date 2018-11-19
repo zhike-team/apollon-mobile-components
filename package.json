@@ -15,7 +15,8 @@
     "react": "^16.5.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.5.2",
-    "react-infinite-calendar": "^2.3.1"
+    "react-infinite-calendar": "^2.3.1",
+    "sanitize-html": "^1.19.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
