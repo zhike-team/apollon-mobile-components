@@ -55,7 +55,7 @@ const StyledParagraph = (props: StyledParagraphPropInterface) => {
       <Icon type={type} size='sm'/>
     </div>
   )
-  const dirty = text.replace(/ /g, '<br/>')
+  const dirty = text.replace(/\n/g, '<br/>')
   const clean = sanitizeHtml(dirty, {
     allowedTags: ['br']
   })

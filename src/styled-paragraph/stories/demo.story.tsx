@@ -21,7 +21,9 @@ storiesOf('Styled Paragraph', module)
     <MuiThemeProvider theme={theme}>
       <Paragraph
         title='this is title'
-        text='学生的单词量掌握上明显不够，错的题目中单词类型的题比较多。↵↵建议学生回家后多阅读一些英文书籍，最好能订阅一份英文报纸看一看。↵↵另外，可以随身带着英文辞典，没事就看一看。'
+        text='学生的单词量掌握上明显不够，错的题目中单词类型的题比较多。
+        建议学生回家后多阅读一些英文书籍，最好能订阅一份英文报纸看一看。
+        另外，可以随身带着英文辞典，没事就看一看。'
         type='blank'
       />
     </MuiThemeProvider>
