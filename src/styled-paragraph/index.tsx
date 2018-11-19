@@ -5,7 +5,7 @@ import { Theme, withStyles, createStyles, StyledComponentProps } from '@material
 import Typography from '@material-ui/core/Typography'
 import Icon from '../icon/'
 import './styles.css'
-const sanitizeHtml = require('sanitize-html')
+import * as sanitizeHtml from 'sanitize-html'
 
 const styles = (theme: Theme) => createStyles({
   root: {
