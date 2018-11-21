@@ -1,6 +1,23 @@
-.funny-checkbox {
-  // color is not working (overridden by mui)
-  color: #115599;
-  // height is working
-  height: 200px;
+.dialog-container {
+  div:nth-child(2) {
+    max-width: 600px;
+    margin: 48px;
+    border-radius: 10px;
+    div:first-child {
+      padding: 0;
+    }
+    .dialog-content {
+      padding: 24px;
+      font-size: 16px;
+    }
+  }
+  .dialog-actions {
+    margin: 8px 4px !important;
+    button {
+      padding: 8px 22px;
+      span {
+        font-size: 14px;
+      }
+    }
+  }
 }

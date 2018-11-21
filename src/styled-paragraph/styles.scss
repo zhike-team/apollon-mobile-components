@@ -1,22 +1,20 @@
-.root {
-  display: 'inline-flex';
-}
-.title {
-  font-size: 16px;
-  line-height: 22px;
-}
-.paragraph {
-  font-size: 14px;
+.paragraph-container {
   margin-bottom: 24px;
-}
-// .icon {
-//   width: 20;
-// }
-.iconSlot {
-  height: '100%';
-  margin-right: 8px;
-}
-.right {
   display: flex;
-  flex-direction: column;
+  .icon {
+    margin-right: 8px;
+  }
+  .paragraph {
+    .paragraph-title {
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+      color: #3399FF;
+    }
+    .paragraph-content {
+      margin: 16px 0 0 0;
+      font-size: 14px;
+      color: #53595F;
+    }
+  }
 }
