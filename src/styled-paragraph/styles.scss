@@ -1,6 +1,22 @@
-.funny-checkbox {
-  // color is not working (overridden by mui)
-  color: #115599;
-  // height is working
-  height: 200px;
+.root {
+  display: 'inline-flex';
+}
+.title {
+  font-size: 16px;
+  line-height: 22px;
+}
+.paragraph {
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+// .icon {
+//   width: 20;
+// }
+.iconSlot {
+  height: '100%';
+  margin-right: 8px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
 }

@@ -38,14 +38,14 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         variant='outlined'
         size='large'
         color='primary'
-        className='view-button'
+        className='view-button button'
         onClick={this.props.viewReport}
       >
         查看反馈
       </Button>
     )
     const uncompleteButtonsDom = (
-      <div>
+      <div className='button'>
         <p className='unfinish-button'>
           <Button variant='outlined' size='large' color='primary' onClick={this.props.onUnfinish}>
             未完成
@@ -72,11 +72,11 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
               </span>
               <span>{data.name}</span>
             </p>
-            <p className='classroom'><Icon type='location' size='xs' />{data.classroom}</p>
+            <p className='classroom'><Icon type='location' size='xxs' />{data.classroom}</p>
           </div>
           <div className='member'>
             <p><span><Icon type='face-teacher' size='xs' /></span><span className='right'>{data.teacherName}</span></p>
-            <p><span className='exchange'><Icon type='exchange' size='xxs' /></span></p>
+            <p><span className='exchange right'><Icon type='exchange' size='xxs' /></span></p>
             <p><span><Icon type='face-student' size='xs' /></span><span className='right'>{data.studentName || '班课'}</span></p>
           </div>
         </main>

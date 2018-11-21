@@ -6,8 +6,8 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import theme from '../theme'
 const data = {
   name: 'IELTS口语',
-  studentName: 'LF1',
-  teacherName: 'LF2',
+  studentName: '樊园园',
+  teacherName: '李倩楠',
   startTime: new Date(),
   endTime: new Date(),
   classroom: '北京新中关学习中心',
@@ -49,7 +49,7 @@ storiesOf('ScheduleList', module)
       viewReport={viewReport}
       onUnfinish={onUnfinish}
       onFinish={onFinish}
-      editPermission={true}
+      editPermission={false}
     />
   )))
   .add('教师未完成', withInfo({ inline: true })(() => (
