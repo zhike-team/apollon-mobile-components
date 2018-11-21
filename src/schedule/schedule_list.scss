@@ -1,107 +1,122 @@
 .schedule-list {
-    padding: 1.6rem;
-    header {
-      display: flex;
-      span {
-        flex: 1;
+  padding: 16px;
+  background: #fff;
+  box-shadow:0px 2px 6px 0px rgba(0,0,0,0.06);
+  border-radius:5px;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .time {
+      height: 20px;
+      line-height: 20px;
+      font-size: 18px;
+      color: #39f;
+    }
+    .status {
+      font-size: 14px;
+      .sm-icon-sm {
+        height: 16px;
+        width: 16px;
+        margin-right: 8px;
       }
-      .time {
-        font-size: 1.8rem;
+      .blue {
         color: #39f;
       }
-      .status {
-        text-align: right;
-        font-size: 1.4rem;
-        .sm-icon-sm {
-          height: 1.4rem!important;
-          width: 1.4rem!important;
-          margin-right: 0.8rem;
+      .red {
+        color: red;
+      }
+      .gray {
+        color: #8F9DA5;
+      }
+    }
+  }
+  main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .name {
+      p {
+        margin: 0;
+      }
+      .course-name {
+        margin-bottom: 12px;
+        font-size: 16px;
+        display: flex;
+        .identification-box {
+          display: flex;
+          align-items: center;
         }
-        .blue {
+        .identification {
+          display: inline-block;
+          height: 14px;
+          width: 14px;
+          margin-right: 10px;
+          border-radius: 2px;
+          border: 1px solid #39f;
+          text-align: center;
+          line-height: 14px;
+          font-size: 10px;
           color: #39f;
         }
-        .red {
-          color: red;
+        .identification-hide {
+          display: none;
         }
-        .gray {
-          color: #8F9DA5;
+      }
+      .classroom {
+        font-size: 12px;
+        color: #8F9DA5;
+        .sm-icon {
+          margin: 0 4px 2px 0;
         }
       }
     }
-    main {
+    .member {
+      text-align: right;
+      color: #53595F;
+      p {
+        margin: 0;
+        height: 16px;
+        span {
+          display: inline-block;
+          overflow: hidden;
+          text-align: center;
+          font-size: 12px;
+        }
+        .right {
+          width: 40px;
+          margin-left: 8px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+  footer {
+    .button {
+      margin-top: 16px;
+    }
+    .view-button {
+      width: 100%;
+    }
+    div {
       display: flex;
-      >div {
+      p {
+        margin: 0;
         flex: 1;
-      }
-      .name {
-        .course-name {
-          font-size: 1.6rem;
-          display: flex;
-          .identification-box {
-            display: flex;
-            align-items: center;
-          }
-          .identification {
-            display: inline-block;
-            height: 1.4rem;
-            width: 1.4rem;
-            margin-right: 1rem;
-            border-radius: 0.2rem;
-            border: 1px solid #39f;
-            text-align: center;
-            line-height: 1.4rem;
-            font-size: 1rem;
-            color: #39f;
-          }
-          .identification-hide {
-            display: none;
-          }
-        }
-        .classroom {
-          font-size: 1.2rem;
-          color: #8F9DA5;
-        }
-      }
-      .member {
-        text-align: right;
-        color: #53595F;
-        p {
-          margin: 0;
-          span {
-            display: inline-block;
-            width: 3rem;
-            overflow: hidden;
-            text-align: center;
-            font-size: 1.2rem;
-          }
-          .right {
-            white-space: nowrap;
-            text-overflow: ellipsis;
-          }
+        button {
+          width: 100%;
         }
       }
     }
-    footer {
-      .view-button {
-        width: 100%;
-      }
-      div {
-        display: flex;
-        p {
-          flex: 1;
-          button {
-            width: 100%;
-          }
-        }
-      }
-      .finished-button {
-        padding-left: 1rem;
-      }
-      .unfinish-button {
-        padding-right: 1rem;
-      }
+    .finished-button {
+      padding-left: 10px;
     }
-    .hide {
-      display: none;
+    .unfinish-button {
+      padding-right: 10px;
     }
+  }
+  .hide {
+    display: none;
+  }
 }

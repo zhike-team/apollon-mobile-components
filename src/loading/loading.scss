@@ -3,8 +3,8 @@ $colors:
   hsla(160, 50, 48, 0.75)
   hsla(190, 61, 65, 0.75)
   hsla( 41, 82, 52, 0.75);
-$size: 2.5em;
-$thickness: 0.5em;
+$size: 25px;
+$thickness: 5px;
 
 // Calculated variables.
 $lat: ($size - $thickness) / 2;
@@ -15,7 +15,7 @@ $offset: $lat - $thickness;
   width: $size;
   height: $size;
   transform: rotate(165deg);
-  
+
   &:before,
   &:after {
     content: '';
@@ -28,11 +28,11 @@ $offset: $lat - $thickness;
     border-radius: $thickness / 2;
     transform: translate(-50%, -50%);
   }
-  
+
   &:before {
     animation: before 2s infinite;
   }
-  
+
   &:after {
     animation: after 2s infinite;
   }
