@@ -8,6 +8,13 @@ import { DialogActionsProps } from '@material-ui/core/DialogActions'
 import { DialogContentProps } from '@material-ui/core/DialogContent'
 import { DialogContentTextProps } from '@material-ui/core/DialogContentText'
 import { DialogTitleProps } from '@material-ui/core/DialogTitle'
+// import Button, { ButtonProps } from '@material-ui/core/Button'
+// import Dialog, { DialogProps } from '@material-ui/core/Dialog'
+// import DialogActions, { DialogActionsProps } from '@material-ui/core/DialogActions'
+// import DialogContent, { DialogContentProps } from '@material-ui/core/DialogContent'
+// import DialogContentText, { DialogContentTextProps } from '@material-ui/core/DialogContentText'
+// import DialogTitle, { DialogTitleProps } from '@material-ui/core/DialogTitle'
+import './styles.css'
 
 const { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } = StyledComponents
 
@@ -99,6 +106,7 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
     const { dialogActionsProps = {}, buttonProps = {} } = this.props
     return (
       <DialogActions
+        className='dialog-actions'
         {...dialogActionsProps}
       >
         {actions.map(({ text }, ii) => <Button {...buttonProps} id={`${ACTION_BTN_ID_PREF}:${ii}`} key={text} onClick={this.handleClose} color={ii === actions.length - 1 ? 'secondary' : 'primary'} >{text}</Button>)}
@@ -118,6 +126,7 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
     const { title = '', message = '' } = this.state.openRequest || {}
     return (
       <Dialog
+        className='dialog-container'
         {...dialogProps}
         fullScreen={fullScreen}
         fullWidth={fullWidth}
@@ -125,9 +134,9 @@ export class SSDialog extends React.Component<SSDialogPropInterface, SSDialogSta
         onClose={this.handleClose}
         aria-labelledby='ss-responsive-dialog-title'
       >
-        {!!title && <DialogTitle {...dialogTitleProps} id='ss-responsive-dialog-title'>{title}</DialogTitle>}
+        {/* {!!title && <DialogTitle {...dialogTitleProps} id='ss-responsive-dialog-title'>{title}</DialogTitle>} */}
         <DialogContent {...dialogContentProps} >
-          <DialogContentText {...dialogContentTextProps} color='primary'>{message}</DialogContentText>
+          <DialogContentText {...dialogContentTextProps} color='primary' className='dialog-content'>{message}</DialogContentText>
         </DialogContent>
         {this.renderActions()}
       </Dialog>

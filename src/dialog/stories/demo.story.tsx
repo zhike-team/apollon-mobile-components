@@ -11,7 +11,6 @@ async function handleClick () {
   counter += 2
   const idxs = await Promise.all([
     openDialog({
-      title: `title: ${counter - 2}`,
       message: `message: message: message: message: message: message: ${counter - 2}`
     }),
     openDialog({
@@ -25,7 +24,6 @@ async function handleClick () {
 async function handleClick2 () {
   counter += 1
   const ret = await openDialog({
-    title: `title: ${counter - 1}`,
     message: `message: message: message: message: message: message: ${counter - 1}`,
     actions: [{ text: '确定' }]
   })
