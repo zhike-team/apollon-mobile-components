@@ -38,14 +38,14 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         variant='outlined'
         size='large'
         color='primary'
-        className='view-button button'
+        className='view-button button-box'
         onClick={this.props.viewReport}
       >
         查看反馈
       </Button>
     )
     const uncompleteButtonsDom = (
-      <div className='button'>
+      <div className='button-box'>
         <p className='unfinish-button'>
           <Button variant='outlined' size='large' color='primary' onClick={this.props.onUnfinish}>
             未完成
