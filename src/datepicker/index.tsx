@@ -30,6 +30,7 @@ class DatePicker extends React.Component<DatePickerPropsInterface, any> {
         selected={date}
         onSelect={this.handleDateChange}
         locale={locale}
+        rowHeight={112}
       />
     )
   }
