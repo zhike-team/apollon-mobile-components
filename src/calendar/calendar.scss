@@ -1,0 +1,48 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .rc-calendar {
+    width: 100%;
+    line-height: 50px;
+    font-size: 14px;
+    color: #2E3236;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+    .rc-calendar-header {
+      display: none;
+    }
+    .rc-calendar-body {
+      .rc-calendar-column-header {
+        padding: 0;
+        width: 50px;
+        text-align: center;
+      }
+      .rc-calendar-cell {
+        padding: 0;
+        width: 50px;
+        text-align: center;
+      }
+      .rc-calendar-today {
+        color: #3399FF;
+        background:rgba(51,153,255,0.2);
+        border-radius:25px;
+      }
+      .rc-calendar-selected-day {
+        color: #fff;
+        background:rgba(51,153,255,1);
+        box-shadow:0px 8px 20px 0px rgba(51,153,255,0.35);
+        border-radius:25px;
+      }
+      .rc-calendar-last-month-cell, .rc-calendar-next-month-btn-day {
+        color: #C3CCD1;
+      }
+    }
+  }
+}
