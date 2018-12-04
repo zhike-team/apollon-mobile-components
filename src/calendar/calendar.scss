@@ -1,4 +1,9 @@
+@font-face {
+  font-family: GFModernBold;
+  src: url('../font-family/GFModern-Bold_0.otf');
+}
 .calendar-container {
+  font-family: GFModernBold;
   display: flex;
   flex-direction: column;
   align-items: center;
