@@ -1,9 +1,4 @@
-@font-face {
-  font-family: GFModernBold;
-  src: url('../font-family/GFModern-Bold_0.otf');
-}
 .calendar-container {
-  font-family: GFModernBold;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +6,7 @@
     margin-bottom: 32px;
     display: flex;
     align-items: center;
-    b {
+    span {
       margin-right: 10px;
       font-size: 18px;
       color: #2E3236;
