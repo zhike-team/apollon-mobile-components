@@ -63,7 +63,7 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
     return (
       <div className='calendar-container'>
         <div className='calendar-head' onClick={this.handleSelectMonth}>
-          <b>{moment(this.state.pickerDate).format('YYYY.MM')}</b>
+          <span>{moment(this.state.pickerDate).format('YYYY.MM')}</span>
           <Icon type='calendar-arrow' size='xxs' />
         </div>
         <Calendar
