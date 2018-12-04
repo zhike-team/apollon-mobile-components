@@ -2,6 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .calendar-head {
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    b {
+      margin-right: 10px;
+      font-size: 18px;
+      color: #2E3236;
+    }
+  }
   .rc-calendar {
     width: 100%;
     line-height: 50px;
@@ -24,6 +34,9 @@
         width: 50px;
         text-align: center;
       }
+      .rc-calendar-column-header[title='周六'],.rc-calendar-column-header[title='周日'] {
+        color: #3399FF;
+      }
       .rc-calendar-cell {
         padding: 0;
         width: 50px;
@@ -42,6 +55,37 @@
       }
       .rc-calendar-last-month-cell, .rc-calendar-next-month-btn-day {
         color: #C3CCD1;
+      }
+    }
+  }
+}
+.datepicker-modal .ios {
+  .datepicker-navbar {
+    border-bottom: 1px solid #EAEFF2 !important;
+    .datepicker-navbar-btn {
+      height: 50px;
+      line-height: 50px;
+      font-size: 16px;
+      color: #3399FF;
+    }
+    .datepicker-navbar-btn:nth-child(2) {
+      color: #8F9DA5;
+    }
+  }
+  .datepicker-content {
+    padding-top: 60px !important;
+    .datepicker-wheel {
+      border: none;
+      .datepicker-scroll {
+        li {
+          font-size: 18px;
+          color: #8F9DA5;
+          font-weight: bold;
+        }
+        li:nth-child(6) {
+          font-size: 20px;
+          color: #3399FF;
+        }
       }
     }
   }

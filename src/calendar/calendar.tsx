@@ -3,15 +3,14 @@ import './calendar.css'
 import Calendar from 'rc-calendar'
 // import 'rc-calendar/assets/index.css'
 import * as moment from 'moment'
-import 'moment/locale/zh-cn'
-moment().locale('zh-cn').utcOffset(8)
 import * as DatePicker from 'react-mobile-datepicker'
+import Icon from '../icon'
+import 'moment/locale/zh-cn'
+moment().locale('zh-cn')
 
 export interface CalendarPropsInterface {
-  // icon: string
-  // primaryText: string
-  // secondaryText?: string
-  // onReportClick: () => void
+  date: any,
+  onChange: (date: any) => void
 }
 
 interface CalendarStateInterface {
@@ -23,7 +22,7 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
   constructor (props: any) {
     super(props)
     this.state = {
-      pickerDate: new Date(),
+      pickerDate: props.date || new Date(),
       isOpen: false
     }
   }
@@ -44,6 +43,7 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
   }
 
   handleCalendarSelect = (date: any) => {
+    this.props.onChange(date)
     this.setState({ pickerDate: date })
   }
 
@@ -62,7 +62,10 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
     }
     return (
       <div className='calendar-container'>
-        <div onClick={this.handleSelectMonth}>{moment(this.state.pickerDate).format('YYYY.MM')}</div>
+        <div className='calendar-head' onClick={this.handleSelectMonth}>
+          <b>{moment(this.state.pickerDate).format('YYYY.MM')}</b>
+          <Icon type='calendar-arrow' size='xxs' />
+        </div>
         <Calendar
           value={moment(this.state.pickerDate)}
           showDateInput={false}
