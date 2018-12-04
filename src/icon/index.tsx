@@ -26,7 +26,7 @@ class Icon extends React.Component<IconPropsInterface, any> {
   componentDidMount () {
     const script = document.createElement('script')
     script.type = 'text/javascript'
-    script.src = 'https://at.alicdn.com/t/font_886252_1yguo41d46s.js'
+    script.src = 'https://at.alicdn.com/t/font_886252_i5gzxl7vdp.js'
     script.id = '__SMART_MOBILE_ICONFONT_NODE__'
     loadElement(script, 'ICONFONT', 'head')
   }

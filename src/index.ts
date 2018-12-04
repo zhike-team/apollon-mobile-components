@@ -10,6 +10,7 @@ import DatePicker from './datepicker'
 import Dialog, { openDialog } from './dialog'
 import LoadableContainer from './loadable-container'
 import { AccountPicker } from './account-picker'
+import ZkCalendar from './calendar/calendar'
 
 export {
   theme,
@@ -24,5 +25,6 @@ export {
   DatePicker,
   Loading,
   LoadableContainer,
-  AccountPicker
+  AccountPicker,
+  ZkCalendar
 }
