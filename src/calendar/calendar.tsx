@@ -1,10 +1,10 @@
 import * as React from 'react'
 import './calendar.css'
 import Calendar from 'rc-calendar'
-// import 'rc-calendar/assets/index.css'
 import * as moment from 'moment'
 import * as DatePicker from 'react-mobile-datepicker'
 import Icon from '../icon'
+import Slider from 'react-slick'
 import 'moment/locale/zh-cn'
 moment().locale('zh-cn')
 
@@ -60,8 +60,18 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
         step: 1
       }
     }
-    return (
-      <div className='calendar-container'>
+    const settings = {
+      dots: false,
+      infinite: true,
+      speed: 200,
+      beforeChange: (current: number, next: number) => {
+        const currentDate = this.state.pickerDate
+        const newDate = current - next === -1 || current - next > 1 ? moment(currentDate).add(1, 'months') : moment(currentDate).subtract(1, 'months')
+        this.setState({ pickerDate: newDate })
+      }
+    }
+    const calendarItem = (
+      <div className='calendar-box'>
         <div className='calendar-head' onClick={this.handleSelectMonth}>
           <span>{moment(this.state.pickerDate).format('YYYY.MM')}</span>
           <Icon type='calendar-arrow' size='xxs' />
@@ -72,6 +82,15 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
           showToday={false}
           onSelect={this.handleCalendarSelect}
         />
+      </div>
+    )
+    return (
+      <div className='calendar-container'>
+        <Slider {...settings}>
+          {calendarItem}
+          {calendarItem}
+          {calendarItem}
+        </Slider>
         <DatePicker
           value={new Date(this.state.pickerDate)}
           isOpen={this.state.isOpen}
