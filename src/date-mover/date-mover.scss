@@ -1,0 +1,20 @@
+.date-mover-container {
+  display: flex;
+  align-items: center;
+
+  .date {
+    padding: 0 20px;
+    color: #2e3236;
+    font-size: 16px;
+  }
+
+  .reverse-icon {
+    transform: rotate(180deg)
+  }
+
+  .sm-icon {
+    cursor: pointer;
+    height: 14px;
+    width: 14px;
+  }
+}
