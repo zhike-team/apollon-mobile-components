@@ -19,15 +19,16 @@ const styles = () => createStyles({
   ulStyle: {
     padding: '10px 15px 6px',
     marginTop: 0,
-    width: 40,
-    height: 114,
+    width: 70,
+    height: 130,
     position: 'absolute',
     top: 28,
     right: 0,
     left: 0,
     listStyle: 'none',
     background: 'rgba(255,255,255,1)',
-    boxShadow: '0px 2px 10px 0px rgba(0,0,0,0.13)'
+    boxShadow: '0px 2px 10px 0px rgba(0,0,0,0.13)',
+    zIndex: 3
   },
   liStyle: {
     padding: '8px 13px',
