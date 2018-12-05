@@ -9,6 +9,8 @@ import theme from './theme'
 import DatePicker from './datepicker'
 import Dialog, { openDialog } from './dialog'
 import LoadableContainer from './loadable-container'
+import RangePicker from './range-picker'
+import DateMover from './date-mover'
 import { AccountPicker } from './account-picker'
 import ZkCalendar from './calendar/calendar'
 
@@ -26,5 +28,7 @@ export {
   Loading,
   LoadableContainer,
   AccountPicker,
-  ZkCalendar
+  ZkCalendar,
+  RangePicker,
+  DateMover
 }
