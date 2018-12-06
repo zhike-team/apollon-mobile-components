@@ -63,7 +63,7 @@ export class ZkCalendar extends React.Component<CalendarPropsInterface, Calendar
     const settings = {
       dots: false,
       infinite: true,
-      speed: 200,
+      speed: 0,
       beforeChange: (current: number, next: number) => {
         const currentDate = this.state.pickerDate
         const newDate = current - next === -1 || current - next > 1 ? moment(currentDate).add(1, 'months') : moment(currentDate).subtract(1, 'months')
