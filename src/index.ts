@@ -6,7 +6,6 @@ import Loading from './loading/'
 import Checkbox from './checkbox'
 import StyledParagraph from './styled-paragraph'
 import theme from './theme'
-import DatePicker from './datepicker'
 import Dialog, { openDialog } from './dialog'
 import LoadableContainer from './loadable-container'
 import RangePicker from './range-picker'
@@ -24,7 +23,6 @@ export {
   Icon,
   Dialog,
   openDialog,
-  DatePicker,
   Loading,
   LoadableContainer,
   AccountPicker,
