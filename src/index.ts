@@ -29,5 +29,6 @@ export {
   AccountPicker,
   ZkCalendar,
   RangePicker,
-  DateMover
+  DateMover,
+  MineItem
 }
