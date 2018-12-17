@@ -1,4 +1,4 @@
-.report-list-item {
+.report-list-item, .mine-list-item  {
   display: flex;
   align-items: center;
   padding: 16px;
@@ -28,5 +28,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+.mine-list-item > .button {
+  flex: 1;
+  text-align: right;
+  .icon {
+    transform: rotate(270deg)
   }
 }
