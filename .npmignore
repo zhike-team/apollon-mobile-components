@@ -83,3 +83,7 @@ jest.config.js
 
 # travis out
 out*
+
+# test files
+test
+__mocks__
