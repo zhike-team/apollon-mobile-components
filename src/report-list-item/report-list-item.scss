@@ -31,10 +31,37 @@
   }
 }
 
-.mine-list-item > .button {
-  flex: 1;
-  text-align: right;
-  .icon {
-    transform: rotate(270deg)
+.mine-list-item {
+  position: relative;
+  height: 56px;
+  box-shadow: 0px 0px 13px 3px #eee;
+  .icon-box {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 88px;
+    width: 88px;
+    padding: 0;
+    .icon {
+      height: 100%;
+      width: 100%;
+    }
   }
-}
+  .title-box {
+    margin-left: 72px;
+    .secondary-text {
+      font-size: 12px;
+      color: #2E3236;
+    }
+  }
+  .button {
+    flex: 1;
+    text-align: right;
+    .icon {
+      display: inline-block;
+      height: 14px;
+      width: 14px;
+      transform: rotate(270deg)
+    }
+  }
+} 
