@@ -11,7 +11,7 @@ export interface MineListItemPropsInterface {
 
 interface MineListItemStateInterface {}
 
-export class MineListItem extends React.Component<MineListItemPropsInterface, MineListItemStateInterface> {
+class MineListItem extends React.Component<MineListItemPropsInterface, MineListItemStateInterface> {
   public render () {
     return (
       <div className='mine-list-item' onClick={this.props.onMineClick}>
