@@ -12,6 +12,7 @@ storiesOf('我的列表', module)
       primaryText='解绑'
       secondaryText='unbinding'
       onMineClick={onMineClick}
+      className='hahahah'
     />
   )))
   .add('切换角色', withInfo({ inline: true })(() => (
@@ -20,5 +21,6 @@ storiesOf('我的列表', module)
       primaryText='切换角色'
       secondaryText='change-role'
       onMineClick={onMineClick}
+      className='ahahah'
     />
   )))
