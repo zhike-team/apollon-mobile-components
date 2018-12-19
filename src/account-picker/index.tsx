@@ -70,7 +70,12 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     }
 
     // sort and create subGroups
-    const sortedKeys = Object.keys(groupedAccounts).sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'accent' }))
+    let sortedKeys = Object.keys(groupedAccounts)
+    try {
+      sortedKeys = sortedKeys.sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'accent' }))
+    } catch (error) {
+      // do nothing
+    }
     const subGroups = sortedKeys.map(key => ({ key, accounts: groupedAccounts[key] }))
     if (unGroupedAccounts.length) subGroups.push({ key: 'ungrouped', accounts: unGroupedAccounts })
 
