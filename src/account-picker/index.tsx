@@ -56,12 +56,14 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     const unGroupedAccounts: Account[] = []
 
     // group by first character of given group field
+    let sortedKeys: string[] = []
     for (const account of accounts) {
       let key
       if (typeof account[group as string] === 'string') {
         key = account[group as string][0]
       }
       if (key) {
+        if (!sortedKeys.includes(key)) sortedKeys.push(key)
         groupedAccounts[key] = groupedAccounts[key] || []
         groupedAccounts[key].push(account)
       } else {
@@ -70,7 +72,6 @@ export class AccountPicker extends React.Component<AccountPickerPropsInterface, 
     }
 
     // sort and create subGroups
-    let sortedKeys = Object.keys(groupedAccounts)
     try {
       sortedKeys = sortedKeys.sort((a, b) => a.localeCompare(b, 'zh-Hans-CN', { sensitivity: 'accent' }))
     } catch (error) {
