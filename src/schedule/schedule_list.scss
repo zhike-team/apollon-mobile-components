@@ -63,7 +63,10 @@
           display: none;
         }
       }
-      .classroom {
+      .org-name {
+        margin: -5px 0 5px 0;
+      }
+      .classroom, .org-name {
         font-size: 12px;
         color: #8F9DA5;
         .sm-icon {

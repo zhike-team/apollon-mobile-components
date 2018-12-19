@@ -22,7 +22,8 @@ interface SchedulePropsInterface {
   editPermission: boolean,
   viewReport: () => void,
   onUnfinish: () => void,
-  onFinish: () => void
+  onFinish: () => void,
+  orgName: string
 }
 interface ScheduleStateInterface {}
 
@@ -58,6 +59,11 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
         </p>
       </div>
     )
+    const xiaoqu = (
+      <p className='org-name'>
+        <Icon type='xiaoqu' size='xxs' />{this.props.orgName}
+      </p>
+    )
     return (
       <div className='schedule-list'>
         <header>
@@ -72,6 +78,7 @@ export default class Schedule extends React.Component<SchedulePropsInterface, Sc
               </span>
               <span>{data.name}</span>
             </p>
+            {this.props.orgName ? xiaoqu : ''}
             <p className='classroom'><Icon type='location' size='xxs' />{data.classroom}</p>
           </div>
           <div className='member'>

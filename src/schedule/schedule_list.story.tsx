@@ -38,6 +38,7 @@ storiesOf('ScheduleList', module)
         onUnfinish={onUnfinish}
         onFinish={onFinish}
         editPermission={true}
+        orgName={'在线VIP教育'}
       />
     </MuiThemeProvider>
   )))
@@ -50,6 +51,7 @@ storiesOf('ScheduleList', module)
       onUnfinish={onUnfinish}
       onFinish={onFinish}
       editPermission={false}
+      orgName={'在线VIP教育'}
     />
   )))
   .add('教师未完成', withInfo({ inline: true })(() => (
@@ -62,6 +64,7 @@ storiesOf('ScheduleList', module)
         onUnfinish={onUnfinish}
         onFinish={onFinish}
         editPermission={true}
+        orgName={'11月肖邦'}
       />
     </MuiThemeProvider>
   )))
