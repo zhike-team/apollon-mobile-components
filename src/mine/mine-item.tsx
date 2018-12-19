@@ -15,7 +15,7 @@ interface MineListItemStateInterface {}
 class MineListItem extends React.Component<MineListItemPropsInterface, MineListItemStateInterface> {
   public render () {
     return (
-      <div className={`mine-list-item ${this.props.className}`} onClick={this.props.onMineClick}>
+      <div className={'mine-list-item' + (this.props.className ? ` ${this.props.className}` : '')} onClick={this.props.onMineClick}>
         <div className='icon-box'>
           <img src={this.props.url} className='icon' />
         </div>
