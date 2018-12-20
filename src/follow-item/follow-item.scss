@@ -1,0 +1,44 @@
+.follow-item-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+
+  &.bordered {
+    border: 1px solid #f8f9fa;
+  }
+
+  .slick-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #53595f;
+    font-size: 14px;
+
+    .name {
+      width: 70px;
+      margin:0 32px 0 16px;
+    }
+
+    .phone {
+
+    }
+  }
+
+  .operations {
+    float: right;
+
+    > span {
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      width: 60px;
+      background: #ff7272;
+      font-size: 14px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
