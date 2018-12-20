@@ -9,6 +9,7 @@ import theme from './theme'
 import Dialog, { openDialog } from './dialog'
 import LoadableContainer from './loadable-container'
 import RangePicker from './range-picker'
+import FollowItem from './follow-item'
 import DateMover from './date-mover'
 import { AccountPicker } from './account-picker'
 import ZkCalendar from './calendar/calendar'
@@ -29,6 +30,7 @@ export {
   AccountPicker,
   ZkCalendar,
   RangePicker,
+  FollowItem,
   DateMover,
   MineItem
 }
