@@ -4,7 +4,9 @@
   height: 60px;
 
   &.bordered {
-    border: 1px solid #f8f9fa;
+    .slick-container {
+      border-bottom: 1px solid #f8f9fa;
+    }
   }
 
   .slick-container {
@@ -20,6 +22,9 @@
     .name {
       width: 70px;
       margin:0 32px 0 16px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .phone {
