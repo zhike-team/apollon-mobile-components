@@ -13,7 +13,8 @@ interface FollowItemPropsInterface {
   name: string,
   phone: string | number,
   withBorder: boolean,
-  operations: OperationInterface[]
+  operations: OperationInterface[],
+  onNameClick?: () => void
 }
 
 interface FollowItemStateInterface {
@@ -65,7 +66,7 @@ class FollowItem extends React.Component<FollowItemPropsInterface, FollowItemSta
   }
 
   render () {
-    const { name, phone, withBorder, operations } = this.props
+    const { name, phone, withBorder, operations, onNameClick } = this.props
     const { xDistance } = this.state
     return (
       <div className={`follow-item-container ${withBorder ? 'bordered' : ''}`}>
@@ -78,7 +79,10 @@ class FollowItem extends React.Component<FollowItemPropsInterface, FollowItemSta
           onStop={this.handleStop}
         >
           <div className='slick-container'>
-            <span className='name'>
+            <span
+              onClick={onNameClick}
+              className='name'
+            >
               {name}
             </span>
             <span className='phone'>
