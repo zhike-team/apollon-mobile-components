@@ -10,6 +10,7 @@ storiesOf('报告列表项', module)
   .add('日报项', withInfo({ inline: true })(() => (
     <ReportListItem
       icon='paper-blue'
+      topTitle='新中关'
       primaryText='2018年10月18日教学服务日报'
       onReportClick={showDailyReport}
     />

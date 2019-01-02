@@ -31,6 +31,28 @@
   }
 }
 
+.report-list-item {
+  position: relative;
+
+  .top-title {
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    width: 72px;
+    height: 24px;
+    padding: 0 4px;
+    line-height: 24px;
+    background-image: url(./blue-line.png);
+    background-size: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 .mine-list-item {
   position: relative;
   height: 88px;

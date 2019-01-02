@@ -6,6 +6,7 @@ export interface ReportListItemPropsInterface {
   icon: string
   primaryText: string
   secondaryText?: string
+  topTitle?: string
   onReportClick: () => void
 }
 
@@ -13,14 +14,16 @@ interface ReportListItemStateInterface {}
 
 export class ReportListItem extends React.Component<ReportListItemPropsInterface, ReportListItemStateInterface> {
   public render () {
+    const { icon, primaryText, secondaryText, topTitle, onReportClick } = this.props
     return (
-      <div className='report-list-item' onClick={this.props.onReportClick}>
+      <div className='report-list-item' onClick={onReportClick}>
+        {topTitle && <span className='top-title'>{topTitle}</span>}
         <div className='icon-box'>
-          <Icon type={this.props.icon} className='icon' />
+          <Icon type={icon} className='icon' />
         </div>
         <div className='title-box'>
-          <span className='primary-text'>{this.props.primaryText}</span>
-          {this.props.secondaryText ? <span className='secondary-text'>{this.props.secondaryText}</span> : ''}
+          <span className='primary-text'>{primaryText}</span>
+          {secondaryText ? <span className='secondary-text'>{secondaryText}</span> : ''}
         </div>
       </div>
     )
