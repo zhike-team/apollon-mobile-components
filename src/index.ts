@@ -14,6 +14,8 @@ import DateMover from './date-mover'
 import { AccountPicker } from './account-picker'
 import ZkCalendar from './calendar/calendar'
 import MineItem from './mine/mine-item'
+import QuestionInput from './question-input'
+import Question from './question'
 
 export {
   theme,
@@ -32,5 +34,7 @@ export {
   RangePicker,
   FollowItem,
   DateMover,
-  MineItem
+  MineItem,
+  QuestionInput,
+  Question
 }
