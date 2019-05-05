@@ -1,5 +1,6 @@
 import * as React from 'react'
 import QuestionaireInput from '../question-input'
+import './question.css'
 
 const teacherKeys = ['abilities', 'atmosphere', 'timeliness']
 
