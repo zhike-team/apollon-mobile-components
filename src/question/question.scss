@@ -1,0 +1,146 @@
+@mixin questionaireInput {
+  margin: 12px 0 0 0;
+  width:120px;
+  height:32px;
+  border-radius:3px;
+  opacity:0.4;
+  border:1px solid rgba(195,204,209,1);
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.question-item-container {
+  margin-bottom: 20px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    .index {
+      margin: 0 16px;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-size: 14px;
+      border-radius: 99px;
+      color: #fff;
+      background:rgba(254,144,9,1);
+    }
+
+    .text {
+      margin: 0;
+      padding-right: 16px;
+      width: calc( 100% - 32px );
+      padding-bottom: 8px;
+      font-size: 14px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(41,50,58,1);
+      line-height: 24px;
+      border-bottom: 1px solid rgb(252, 209, 156);
+
+      .red-star {
+        color: red;
+      }
+
+      .tip {
+        color: #818c96;
+        font-weight: 500;
+      }
+
+      &:first-of-type {
+        margin-top: 16px;
+      }
+    }
+  }
+
+  .description {
+    margin-left: 52px;
+
+    p.teacher-description {
+      margin: 0 16px 16px 0;
+      font-size: 12px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(83,89,95,1);
+      line-height: 22px;
+
+      &:last-of-type {
+        margin: 0 16px 0 0;
+      }
+    }
+
+    .pt-score-title {
+      margin: 0;
+      font-size: 14px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color:rgba(41,50,58,1);
+      line-height: 22px;
+
+      input {
+        @include questionaireInput;
+        display: block;
+      }
+
+      .ant-input-disabled {
+        background: #fff;
+      }
+    }
+
+    textarea {
+      padding: 24px;
+      width: calc( 100% - 16px);
+      min-height: 140px;
+      border-radius: 5px;
+      resize: none;
+      font-size: 14px;
+      color: #2e3236;
+      border:1px solid rgba(195,204,209, 0.4);
+    }
+
+    .teachers-scores {
+      margin-top: 32px;
+
+      .teacher-score-title {
+        margin: 0;
+        font-size: 14px;
+        font-family: PingFang-SC-Medium;
+        font-weight: 500;
+        color: rgba(41,50,58,1);
+      }
+
+      .teachers-wrapper {
+
+        .teacher-score-input {
+          display: flex;
+          align-items: center;
+          margin: 20px 0 0 0;
+
+          > span {
+            display: inline-block;
+            width: 120px;
+            text-align: left;
+            font-size: 12px;
+            font-family: PingFang-SC-Medium;
+            font-weight: 500;
+            color: rgba(83,89,95,1);
+          }
+
+          input {
+            @include questionaireInput;
+            margin: 0 51px 0 0;
+          }
+
+          .ant-input-disabled {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+}
