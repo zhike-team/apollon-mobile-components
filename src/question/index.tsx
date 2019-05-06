@@ -4,6 +4,14 @@ import './question.css'
 
 const teacherKeys = ['abilities', 'atmosphere', 'timeliness']
 
+const descriptionMapHandler = (item: any, index: number, questionScoreDescription: any) => {
+  return (
+    <p key={item} className='teacher-description'>
+      {`${questionScoreDescription[index]}：${item}`}
+    </p>
+  )
+}
+
 interface SubjectInterface {
   id: number,
   name: string,
@@ -19,6 +27,7 @@ interface IPropsInterface {
   description?: string[],
   score?: number | any,
   onChange?: (data: any) => void,
+  onError?: (message: string) => void,
   teachers?: any,
   questionScoreDescription?: string[],
   subjects?: SubjectInterface[]
@@ -29,13 +38,9 @@ class Question extends React.Component<IPropsInterface, any> {
   renderDescription = (description: any) => {
     const { questionScoreDescription } = this.props
     if (questionScoreDescription) {
-      return description.map((item: any, index: number) => {
-        return (
-          <p key={item} className='teacher-description'>
-            {`${questionScoreDescription[index]}:${item}`}
-          </p>
-        )
-      })
+      return description.map((item: any, index: number) =>
+        descriptionMapHandler(item, index, questionScoreDescription)
+      )
     } else {
       return null
     }
@@ -47,47 +52,49 @@ class Question extends React.Component<IPropsInterface, any> {
       <textarea
         onChange={handler}
         disabled={disabled}
-      >
-        {text}
-      </textarea>
+        value={text}
+      />
     )
   }
 
   handleChangeScore = (value: string, type: string, subjectId?: number) => {
-    let data = {}
-    if (['advice', 'favoriteTeacher'].includes(type)) {
-      data = {
-        [type]: value
-      }
-    } else if (subjectId) {
-      data = {
-        [type]: {
-          [subjectId]: value
-        }
-      }
-    } else {
-      data = {
-        ptScore: {
+    const { onChange } = this.props
+    if (onChange) {
+      let data = {}
+      if (['advice', 'favoriteTeacher'].includes(type)) {
+        data = {
           [type]: value
         }
+      } else if (subjectId) {
+        data = {
+          [type]: {
+            [subjectId]: value
+          }
+        }
+      } else {
+        data = {
+          ptScore: {
+            [type]: value
+          }
+        }
       }
-    }
-    if (this.props.onChange) {
-      return this.props.onChange(data)
+      return onChange(data)
     }
   }
 
   renderInput = () => {
-    const { type, teachers, score, mode, subjects = [] } = this.props
+    const { type, teachers, score, mode, subjects = [], onError } = this.props
+    // tslint:disable-next-line:no-empty
+    const errorHandler = onError ? (errMsg: string) => onError(errMsg) : () => {}
     if (teacherKeys.includes(type)) {
       const teachersBlocks = teachers.map((teacher: any) => {
         const scoreProp = mode === 'view' ? { score: score[teacher.subjectId] || '', mode } : { mode }
-        const theTeacher: any = subjects.find((subject: any) => subject.id === teacher.subjectId)
+        const theSubject: any = subjects.find((subject: any) => subject.id === teacher.subjectId)
         const onBlurHandler = (score: any) => this.handleChangeScore(score, type, teacher.subjectId)
         return (
           <p key={teacher.subject} className='teacher-score-input'>
             <span className='subject'>
-              {theTeacher.name}
+              {theSubject.name}
               老师
             </span>
             <span className='name'>
@@ -95,6 +102,7 @@ class Question extends React.Component<IPropsInterface, any> {
             </span>
             <QuestionaireInput
               onBlur={onBlurHandler}
+              onError={errorHandler}
               {...scoreProp}
             />
           </p>)
@@ -117,6 +125,7 @@ class Question extends React.Component<IPropsInterface, any> {
           请根据对应分数区间给予具体打分
           <QuestionaireInput
             onBlur={handler}
+            onError={errorHandler}
             {...scoreProp}
           />
         </p>
@@ -127,7 +136,6 @@ class Question extends React.Component<IPropsInterface, any> {
   render () {
     const { index, title, description, type, text, mode } = this.props
     const isTextarea = ['favoriteTeacher', 'advice'].includes(type)
-    const isInput = !isTextarea
     return (
       <div className='question-item-container'>
         <div className='title'>
@@ -136,13 +144,13 @@ class Question extends React.Component<IPropsInterface, any> {
           </span>
           <p className='text'>
             {title}
-            {isInput && <span className='red-star'>*</span>}
+            {!isTextarea && <span className='red-star'>*</span>}
             {index === 1 && <span className='tip'>（PT=personal tutor, 私人教师）</span>}
           </p>
         </div>
         <div className='description'>
-          {isInput && (this.renderDescription(description))}
-          {isInput && this.renderInput()}
+          {!isTextarea && (this.renderDescription(description))}
+          {!isTextarea && this.renderInput()}
           {isTextarea && this.renderTextarea(type, text, mode === 'view')}
         </div>
       </div>

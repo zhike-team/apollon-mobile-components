@@ -47,7 +47,7 @@ class QuestionaireInput extends React.Component<IPropsInterface, IStateInterface
     ) {
       this.setState({ value: '' })
       actionName = 'onError'
-      actionValue = `请输入${MIN_SCORE}到${MAX_SCORE}之间有效数字`
+      actionValue = `请输入${MIN_SCORE}到${MAX_SCORE}之间的有效数字`
     } else if (`${scoreNum}`.length > MAX_DECIMAL_NUM) {
       const modifiedValue = scoreNum.toFixed(DECIMAL_NUM)
       this.setState({ value: modifiedValue })

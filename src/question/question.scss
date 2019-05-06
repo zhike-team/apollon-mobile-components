@@ -1,4 +1,5 @@
 @mixin questionaireInput {
+  margin: 12px 0 0 0;
   width:120px;
   height:32px;
   border-radius:3px;
@@ -11,15 +12,15 @@
 }
 
 .question-item-container {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 
   .title {
     display: flex;
     align-items: center;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 
     .index {
-      margin-right: 12px;
+      margin: 0 16px;
       width: 20px;
       height: 20px;
       line-height: 20px;
@@ -32,12 +33,15 @@
 
     .text {
       margin: 0;
+      padding-right: 16px;
       width: calc( 100% - 32px );
-      line-height: 50px;
-      color: #29323a;
+      padding-bottom: 8px;
       font-size: 14px;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(41,50,58,1);
+      line-height: 24px;
       border-bottom: 1px solid rgb(252, 209, 156);
-      font-weight: 600;
 
       .red-star {
         color: red;
@@ -47,26 +51,31 @@
         color: #818c96;
         font-weight: 500;
       }
+
+      &:first-of-type {
+        margin-top: 16px;
+      }
     }
   }
 
   .description {
+    margin-left: 52px;
 
     p.teacher-description {
-      margin: 0 0 20px 0;
+      margin: 0 16px 16px 0;
       font-size: 12px;
-      color: #53595f;
+      font-family: PingFang-SC-Medium;
+      font-weight: 500;
+      color: rgba(83,89,95,1);
+      line-height: 22px;
 
       &:last-of-type {
-        margin: 0;
+        margin: 0 16px 0 0;
       }
     }
 
     .pt-score-title {
-      display: flex;
       margin: 0;
-      align-items: center;
-      height: 22px;
       font-size: 14px;
       font-family: PingFang-SC-Medium;
       font-weight: 500;
@@ -74,7 +83,8 @@
       line-height: 22px;
 
       input {
-        @include questionaireInput
+        @include questionaireInput;
+        display: block;
       }
 
       .ant-input-disabled {
@@ -84,8 +94,8 @@
 
     textarea {
       padding: 24px;
-      width: 600px;
-      height: 240px;
+      width: calc( 100% - 16px);
+      min-height: 140px;
       border-radius: 5px;
       resize: none;
       font-size: 14px;
@@ -107,7 +117,8 @@
       .teachers-wrapper {
 
         .teacher-score-input {
-          width: 50%;
+          display: flex;
+          align-items: center;
           margin: 20px 0 0 0;
 
           > span {
@@ -121,7 +132,8 @@
           }
 
           input {
-            @include questionaireInput
+            @include questionaireInput;
+            margin: 0 51px 0 0;
           }
 
           .ant-input-disabled {
