@@ -48,7 +48,7 @@
     "node-sass": "^4.9.4",
     "react-docgen-typescript-loader": "^3.0.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
-    "react-scripts-ts": "^3.1.0",
+    "react-scripts-ts": "^4.0.8",
     "react-test-renderer": "^16.5.2",
     "sass-loader": "^7.1.0",
     "ts-jest": "^24.0.2",
