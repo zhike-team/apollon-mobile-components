@@ -45,7 +45,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "husky": "^2.3.0",
     "jest": "^24.8.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^7.0.0",
     "react-docgen-typescript-loader": "^3.0.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
     "react-scripts-ts": "^4.0.8",
