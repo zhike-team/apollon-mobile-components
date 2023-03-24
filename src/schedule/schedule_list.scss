@@ -50,7 +50,7 @@
         .identification {
           display: inline-block;
           height: 14px;
-          width: 14px;
+          min-width: 14px;
           margin-right: 10px;
           border-radius: 2px;
           border: 1px solid #39f;
@@ -87,10 +87,8 @@
           font-size: 12px;
         }
         .right {
-          width: 40px;
           margin-left: 8px;
           white-space: nowrap;
-          text-overflow: ellipsis;
         }
       }
     }
